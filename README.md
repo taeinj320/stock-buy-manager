@@ -65,7 +65,7 @@ npm run sync:dart-corp   # data/dart-corp-map.json 생성
 
 ## MVP 지표
 
-RSI, MFI, 스토캐스틱, MACD, 볼린저밴드
+RSI, MFI, 스토캐스틱, MACD, 볼린저밴드, 일목균형표(전환·기준·선행스팬)
 
 상태 표기: `적정`, `주의(과매수)`, `부적합(과매도)` 등
 

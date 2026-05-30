@@ -27,6 +27,12 @@ const MESSAGES: Record<string, string> = {
   "bollinger.caution.lower_band": "하단 밴드 접근·터치",
   "bollinger.unsuitable.band_break_up": "상단 밴드 상향 이탈 마감",
   "bollinger.unsuitable.band_break_down": "하단 밴드 하향 이탈 마감",
+
+  "ichimoku.ok": "구름대 위·전환선이 기준선 위 (상승 추세 해석)",
+  "ichimoku.caution.inside_cloud": "가격이 구름대 안 (방향 불명확)",
+  "ichimoku.caution.weak_bullish": "구름대 위이나 전환선이 기준선 아래",
+  "ichimoku.caution.weak_bearish": "구름대 아래이나 전환선이 기준선 위",
+  "ichimoku.unsuitable.bearish": "구름대 아래·전환선이 기준선 아래 (하락 추세 해석)",
 };
 
 export function getMessage(reasonKey: string): string {

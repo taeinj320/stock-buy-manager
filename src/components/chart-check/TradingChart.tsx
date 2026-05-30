@@ -18,6 +18,7 @@ import {
   ColorType,
   HistogramSeries,
   LineSeries,
+  LineStyle,
   createChart,
   type IChartApi,
 } from "lightweight-charts";
@@ -75,6 +76,7 @@ export function TradingChart({
       mfi: visibleOverlays.has("mfi"),
       stochastic: visibleOverlays.has("stochastic"),
       macd: visibleOverlays.has("macd"),
+      ichimoku: visibleOverlays.has("ichimoku"),
     }),
     [visibleOverlays],
   );
@@ -162,6 +164,56 @@ export function TradingChart({
       upper.setData(toLine(overlays.bollinger.upper));
       middle.setData(toLine(overlays.bollinger.middle));
       lower.setData(toLine(overlays.bollinger.lower));
+    }
+
+    if (show.ichimoku && overlays?.ichimoku) {
+      const ichiOpts = {
+        lineWidth: 1 as const,
+        priceLineVisible: false,
+        priceFormat: {
+          type: "custom" as const,
+          formatter: formatKrPrice,
+        },
+      };
+      const toLine = (pts: { time: string; value: number }[]) =>
+        pts.map((p) => ({
+          time: p.time as "YYYY-MM-DD",
+          value: p.value,
+        }));
+      const tenkan = chart.addSeries(
+        LineSeries,
+        { ...ichiOpts, color: "#2563eb", title: "전환" },
+        paneIndex,
+      );
+      const kijun = chart.addSeries(
+        LineSeries,
+        { ...ichiOpts, color: "#dc2626", title: "기준" },
+        paneIndex,
+      );
+      const spanA = chart.addSeries(
+        LineSeries,
+        {
+          ...ichiOpts,
+          color: "rgba(34, 197, 94, 0.85)",
+          lineStyle: LineStyle.Dashed,
+          title: "선행A",
+        },
+        paneIndex,
+      );
+      const spanB = chart.addSeries(
+        LineSeries,
+        {
+          ...ichiOpts,
+          color: "rgba(249, 115, 22, 0.85)",
+          lineStyle: LineStyle.Dashed,
+          title: "선행B",
+        },
+        paneIndex,
+      );
+      tenkan.setData(toLine(overlays.ichimoku.tenkan));
+      kijun.setData(toLine(overlays.ichimoku.kijun));
+      spanA.setData(toLine(overlays.ichimoku.spanA));
+      spanB.setData(toLine(overlays.ichimoku.spanB));
     }
 
     chart.addPane();

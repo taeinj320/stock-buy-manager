@@ -30,6 +30,12 @@ export interface ChartOverlays {
     signal: LinePoint[];
     histogram: LinePoint[];
   };
+  ichimoku?: {
+    tenkan: LinePoint[];
+    kijun: LinePoint[];
+    spanA: LinePoint[];
+    spanB: LinePoint[];
+  };
 }
 
 function toKstParts(d: Date) {

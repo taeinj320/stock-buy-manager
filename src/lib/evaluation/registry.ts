@@ -7,6 +7,7 @@ import type {
   IndicatorParams,
   OhlcvBar,
 } from "./types";
+import { ichimokuAtBar } from "@/lib/indicators/ichimoku";
 import {
   bollinger,
   closes,
@@ -54,6 +55,17 @@ export const INDICATOR_CATALOG: IndicatorMeta[] = [
     enabled: true,
     defaultParams: { period: 20, stdDev: 2 },
   },
+  {
+    id: "ichimoku",
+    name: "일목균형표",
+    enabled: true,
+    defaultParams: {
+      tenkanPeriod: 9,
+      kijunPeriod: 26,
+      senkouBPeriod: 52,
+      displacement: 26,
+    },
+  },
 ];
 
 export function evaluateIndicator(
@@ -99,6 +111,16 @@ export function evaluateIndicator(
       const bb = bollinger(c, period, stdDev);
       if (!bb) return insufficient(id, meta.name);
       return evaluateBollinger(meta.name, bb, c[c.length - 1]);
+    }
+    case "ichimoku": {
+      const snap = ichimokuAtBar(bars, bars.length - 1, {
+        tenkanPeriod: params.tenkanPeriod,
+        kijunPeriod: params.kijunPeriod,
+        senkouBPeriod: params.senkouBPeriod,
+        displacement: params.displacement,
+      });
+      if (!snap) return insufficient(id, meta.name);
+      return evaluateIchimoku(meta.name, snap);
     }
     default:
       return null;
@@ -177,6 +199,92 @@ function evaluateMacd(
     valueDisplay: macdVal.toFixed(2),
     summary: getMessage("macd.unsuitable.bearish"),
     reasonKey: "macd.unsuitable.bearish",
+  };
+}
+
+function evaluateIchimoku(
+  name: string,
+  snap: {
+    close: number;
+    tenkan: number;
+    kijun: number;
+    cloudTop: number;
+    cloudBottom: number;
+  },
+): EvaluationResult {
+  const { close, tenkan, kijun, cloudTop, cloudBottom } = snap;
+  const aboveCloud = close > cloudTop;
+  const belowCloud = close < cloudBottom;
+  const tenkanAbove = tenkan > kijun;
+
+  if (aboveCloud && tenkanAbove) {
+    return {
+      indicatorId: "ichimoku",
+      name,
+      tier: "ok",
+      qualifier: null,
+      label: formatStatusLabel("ok", null),
+      value: close,
+      valueDisplay: `구름 위 · 전환>기준`,
+      summary: getMessage("ichimoku.ok"),
+      reasonKey: "ichimoku.ok",
+      trendNote: `전환 ${tenkan.toFixed(0)} · 기준 ${kijun.toFixed(0)} · 구름 ${cloudBottom.toFixed(0)}~${cloudTop.toFixed(0)}`,
+    };
+  }
+
+  if (belowCloud && !tenkanAbove) {
+    return {
+      indicatorId: "ichimoku",
+      name,
+      tier: "unsuitable",
+      qualifier: "bearish",
+      label: formatStatusLabel("unsuitable", "bearish"),
+      value: close,
+      valueDisplay: `구름 아래 · 전환<기준`,
+      summary: getMessage("ichimoku.unsuitable.bearish"),
+      reasonKey: "ichimoku.unsuitable.bearish",
+      trendNote: `전환 ${tenkan.toFixed(0)} · 기준 ${kijun.toFixed(0)}`,
+    };
+  }
+
+  if (aboveCloud && !tenkanAbove) {
+    return {
+      indicatorId: "ichimoku",
+      name,
+      tier: "caution",
+      qualifier: "weak_bearish",
+      label: formatStatusLabel("caution", "weak_bearish"),
+      value: close,
+      valueDisplay: `구름 위 · 전환<기준`,
+      summary: getMessage("ichimoku.caution.weak_bullish"),
+      reasonKey: "ichimoku.caution.weak_bullish",
+    };
+  }
+
+  if (belowCloud && tenkanAbove) {
+    return {
+      indicatorId: "ichimoku",
+      name,
+      tier: "caution",
+      qualifier: "weak_bullish",
+      label: formatStatusLabel("caution", "weak_bullish"),
+      value: close,
+      valueDisplay: `구름 아래 · 전환>기준`,
+      summary: getMessage("ichimoku.caution.weak_bearish"),
+      reasonKey: "ichimoku.caution.weak_bearish",
+    };
+  }
+
+  return {
+    indicatorId: "ichimoku",
+    name,
+    tier: "caution",
+    qualifier: null,
+    label: formatStatusLabel("caution", null),
+    value: close,
+    valueDisplay: `구름 안`,
+    summary: getMessage("ichimoku.caution.inside_cloud"),
+    reasonKey: "ichimoku.caution.inside_cloud",
   };
 }
 

@@ -29,6 +29,12 @@ export const INDICATOR_GUIDES: Record<IndicatorId, readonly string[]> = {
     "밴드 폭이 좁아지면 변동성이 줄어든 상태(스퀴즈)로, 이후 변동이 커질 수 있다고 봅니다.",
     "밴드 이탈만으로 매매를 결정하기보다, 추세·거래량 등과 함께 해석합니다.",
   ],
+  ichimoku: [
+    "일목균형표는 전환선·기준선·선행스팬 A·B로 만든 ‘구름대’와 가격 위치로 추세를 봅니다.",
+    "가격이 구름대 위면 상승 추세, 아래면 하락 추세로 해석하는 경우가 많습니다.",
+    "전환선이 기준선 위면 단기 강세, 아래면 단기 약세 신호로 봅니다.",
+    "선행스팬은 미래로 밀려 표시되므로, 차트에서는 구름이 가격보다 앞서 보일 수 있습니다.",
+  ],
 };
 
 export function getIndicatorGuide(id: IndicatorId): readonly string[] {

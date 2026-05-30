@@ -1,3 +1,4 @@
+import { decodeHtmlBytes } from "@/lib/embed/decode-html";
 import {
   isEmbeddableHost,
   isGoogleNewsHost,
@@ -55,12 +56,17 @@ export async function GET(req: Request) {
       return NextResponse.redirect(target.toString());
     }
 
-    let html = await res.text();
-    const baseTag = `<base href="${target.origin}/">`;
+    const buf = Buffer.from(await res.arrayBuffer());
+    let html = decodeHtmlBytes(
+      buf,
+      res.headers.get("content-type"),
+      target.hostname,
+    );
+    const headInject = `<meta charset="utf-8"><base href="${target.origin}/">`;
     if (/<head[^>]*>/i.test(html)) {
-      html = html.replace(/<head([^>]*)>/i, `<head$1>${baseTag}`);
+      html = html.replace(/<head([^>]*)>/i, `<head$1>${headInject}`);
     } else {
-      html = `<!DOCTYPE html><html><head>${baseTag}</head><body>${html}</body></html>`;
+      html = `<!DOCTYPE html><html><head>${headInject}</head><body>${html}</body></html>`;
     }
 
     return new NextResponse(html, {

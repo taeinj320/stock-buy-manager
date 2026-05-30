@@ -16,7 +16,8 @@ export type IndicatorId =
   | "mfi"
   | "stochastic"
   | "macd"
-  | "bollinger";
+  | "bollinger"
+  | "ichimoku";
 
 export interface IndicatorParams {
   period?: number;
@@ -26,6 +27,10 @@ export interface IndicatorParams {
   stdDev?: number;
   kPeriod?: number;
   dPeriod?: number;
+  tenkanPeriod?: number;
+  kijunPeriod?: number;
+  senkouBPeriod?: number;
+  displacement?: number;
 }
 
 export interface EvaluationResult {

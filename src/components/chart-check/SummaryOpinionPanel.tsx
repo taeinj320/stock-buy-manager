@@ -124,7 +124,7 @@ export function SummaryOpinionPanel({
           </div>
 
           <div className="mt-3 rounded-md border border-zinc-200/80 bg-white/70 px-3 py-2 text-xs text-zinc-700">
-            <p className="font-medium text-zinc-800">5개 지표 기술 방향 (참고)</p>
+            <p className="font-medium text-zinc-800">선택 지표 기술 방향 (참고)</p>
             <p className="mt-1">
               매수 쪽 해석 {bias.buyLeaning} · 매도 쪽 해석 {bias.sellLeaning} · 중립{" "}
               {bias.neutral}

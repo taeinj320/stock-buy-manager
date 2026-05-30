@@ -82,6 +82,14 @@ export function IndicatorSettingsModal({
               {num("stdDev", "표준편차", 2)}
             </>
           )}
+          {meta.id === "ichimoku" && (
+            <>
+              {num("tenkanPeriod", "전환선 기간", 9)}
+              {num("kijunPeriod", "기준선 기간", 26)}
+              {num("senkouBPeriod", "선행스팬 B 기간", 52)}
+              {num("displacement", "선행스팬 이동(봉)", 26)}
+            </>
+          )}
         </div>
 
         <button

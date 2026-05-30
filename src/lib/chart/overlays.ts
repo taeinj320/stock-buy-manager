@@ -1,5 +1,6 @@
 import type { OhlcvBar } from "@/lib/evaluation/types";
 import type { ChartOverlays, LinePoint } from "@/lib/market-data/ohlcv-utils";
+import { computeIchimoku } from "@/lib/indicators/ichimoku";
 import { bollinger, ema, sma } from "@/lib/indicators/math";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 
@@ -22,6 +23,22 @@ function lineFromSeries(
     const v = values[i];
     if (v == null || Number.isNaN(v)) continue;
     out.push({ time: formatTime(bars[i].date), value: v });
+  }
+  return out;
+}
+
+/** 선행스팬: 계산 시점 값을 displacement만큼 미래 봉에 표시 */
+function lineFromSeriesDisplaced(
+  bars: OhlcvBar[],
+  values: (number | null)[],
+  displacement: number,
+): LinePoint[] {
+  const out: LinePoint[] = [];
+  for (let i = 0; i < bars.length; i++) {
+    const future = i + displacement;
+    const v = values[i];
+    if (v == null || Number.isNaN(v) || future >= bars.length) continue;
+    out.push({ time: formatTime(bars[future].date), value: v });
   }
   return out;
 }
@@ -171,6 +188,22 @@ export function buildChartOverlays(
       macd: lineFromSeries(bars, macdLine),
       signal: lineFromSeries(bars, signalLine),
       histogram: lineFromSeries(bars, histogram),
+    };
+  }
+
+  if (indicatorIds.includes("ichimoku")) {
+    const displacement = paramsMap.ichimoku?.displacement ?? 26;
+    const series = computeIchimoku(bars, {
+      tenkanPeriod: paramsMap.ichimoku?.tenkanPeriod,
+      kijunPeriod: paramsMap.ichimoku?.kijunPeriod,
+      senkouBPeriod: paramsMap.ichimoku?.senkouBPeriod,
+      displacement,
+    });
+    overlays.ichimoku = {
+      tenkan: lineFromSeries(bars, series.tenkan),
+      kijun: lineFromSeries(bars, series.kijun),
+      spanA: lineFromSeriesDisplaced(bars, series.spanA, displacement),
+      spanB: lineFromSeriesDisplaced(bars, series.spanB, displacement),
     };
   }
 
