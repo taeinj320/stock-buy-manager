@@ -10,12 +10,18 @@ ChartCheck는 **Next.js 웹앱**을 유지한 채, 아래 방식으로 스토어
 | **TWA** (Android) | PWA URL을 풀스크린 앱처럼 등록 | ★★☆ |
 | **React Native 재작성** | UI 전면 이식 | ★☆☆ (비용 큼) |
 
+## 앱인토스 (토스 미니앱)
+
+Play Store용 Capacitor와 **별개**입니다. `.ait` 번들은 `create-ait-app` + `npm run build`로 만듭니다.  
+→ [`docs/APP_IN_TOSS.md`](./APP_IN_TOSS.md)
+
 ## 권장 로드맵
 
 1. **웹** — Vercel 배포 유지 ✅
 2. **PWA** — `manifest.webmanifest`, `public/icons/` ✅
-3. **Capacitor** — `capacitor.config.ts` ✅ → `docs/CAPACITOR_SETUP.md` 따라 `cap add`
-4. **스토어** — 로고·썸네일 + **실제 스크린샷**(캡처)
+3. **앱인토스** — `create-ait-app` + API는 Vercel 호출
+4. **Capacitor** — Play/App Store용 → `docs/CAPACITOR_SETUP.md`
+5. **스토어** — 로고·썸네일 + **실제 스크린샷**(캡처)
 
 스크린샷은 목업 PNG가 아니라 **실기/에뮬레이터에서 분석 실행 후 캡처**해야 합니다.
 

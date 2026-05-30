@@ -38,6 +38,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# 앱인토스 미니앱 (소스만 커밋)
+chartcheck-mini/node_modules/
+chartcheck-mini/*.ait
+chartcheck-mini/dist/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
