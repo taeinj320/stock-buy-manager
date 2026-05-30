@@ -28,7 +28,7 @@ export function ChartOverlayPicker({ visible, onChange }: Props) {
       </p>
       {visible.has("ichimoku") && (
         <p className="mb-2 text-[10px] text-zinc-500">
-          일목 구름: 초록=상승(A≥B) · 빨강=하락(A&lt;B) · 선행스팬은 26봉 앞에 표시
+          일목: 구름 초록=상승·빨강=하락 · 선행스팬 26봉 앞 · 후행스팬(보라 점선) 종가 26봉 뒤
         </p>
       )}
       <div className="flex flex-wrap gap-2">

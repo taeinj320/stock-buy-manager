@@ -1,7 +1,7 @@
 import type { OhlcvBar } from "@/lib/evaluation/types";
 import type { ChartOverlays, LinePoint } from "@/lib/market-data/ohlcv-utils";
 import { mergeIchimokuCloudPoints } from "@/lib/chart/ichimoku-cloud-primitive";
-import { computeIchimoku } from "@/lib/indicators/ichimoku";
+import { chikouSeries, computeIchimoku } from "@/lib/indicators/ichimoku";
 import { bollinger, ema, sma } from "@/lib/indicators/math";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 
@@ -26,6 +26,14 @@ function lineFromSeries(
     out.push({ time: formatTime(bars[i].date), value: v });
   }
   return out;
+}
+
+/** 후행스팬: 종가를 displacement만큼 과거 봉 시점에 표시 */
+function lineFromChikou(
+  bars: OhlcvBar[],
+  displacement: number,
+): LinePoint[] {
+  return lineFromSeries(bars, chikouSeries(bars, displacement));
 }
 
 /** 선행스팬: 계산 시점 값을 displacement만큼 미래 봉에 표시 */
@@ -207,6 +215,7 @@ export function buildChartOverlays(
       kijun: lineFromSeries(bars, series.kijun),
       spanA,
       spanB,
+      chikou: lineFromChikou(bars, displacement),
       cloud: mergeIchimokuCloudPoints(spanA, spanB),
     };
   }

@@ -223,6 +223,20 @@ export function TradingChart({
       kijun.setData(toLine(overlays.ichimoku.kijun));
       spanA.setData(toLine(overlays.ichimoku.spanA));
       spanB.setData(toLine(overlays.ichimoku.spanB));
+      if (overlays.ichimoku.chikou.length > 0) {
+        const chikou = chart.addSeries(
+          LineSeries,
+          {
+            ...ichiOpts,
+            color: "#7c3aed",
+            lineStyle: LineStyle.Dotted,
+            lineWidth: 1,
+            title: "후행",
+          },
+          paneIndex,
+        );
+        chikou.setData(toLine(overlays.ichimoku.chikou));
+      }
     }
 
     chart.addPane();

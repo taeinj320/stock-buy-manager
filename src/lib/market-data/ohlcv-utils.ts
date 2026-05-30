@@ -35,6 +35,7 @@ export interface ChartOverlays {
     kijun: LinePoint[];
     spanA: LinePoint[];
     spanB: LinePoint[];
+    chikou: LinePoint[];
     cloud: { time: string; spanA: number; spanB: number }[];
   };
 }

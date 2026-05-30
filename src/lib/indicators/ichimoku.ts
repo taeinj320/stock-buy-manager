@@ -65,6 +65,19 @@ export function computeIchimoku(
   return { tenkan, kijun, spanA, spanB };
 }
 
+/** 후행스팬: 현재 종가를 displacement봉 이전 시점에 표시 */
+export function chikouSeries(
+  bars: OhlcvBar[],
+  displacement: number = DEFAULT_ICHIMOKU.displacement,
+): (number | null)[] {
+  const n = bars.length;
+  const out: (number | null)[] = new Array(n).fill(null);
+  for (let i = displacement; i < n; i++) {
+    out[i - displacement] = bars[i].close;
+  }
+  return out;
+}
+
 /** 현재 봉 기준 구름대·전환·기준선 스냅샷 */
 export function ichimokuAtBar(
   bars: OhlcvBar[],
