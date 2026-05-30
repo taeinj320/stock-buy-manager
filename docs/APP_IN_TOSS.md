@@ -100,16 +100,14 @@ npx ait deploy --api-key {콘솔 API 키}
 
 ---
 
-## ChartCheck UI를 어떻게 넣나?
+## ChartCheck UI
 
-1. **1단계 (빠름)**  
-   미니앱에 검색·분석 버튼만 두고, `fetch('https://stock-buy-manager.vercel.app/api/analyze', …)` 호출.
+현재 `chartcheck-mini`는 **Vercel 웹 전체를 WebView iframe**으로 로드합니다.  
+차트·뉴스·공시·종합의견이 **웹과 동일**합니다.
 
-2. **2단계**  
-   `ChartCheckApp` UI를 Vite + TDS로 단계적 이식 (Next 전용 API는 제거).
+로컬 테스트: `chartcheck-mini/README.md` 참고 (`intoss://chartcheck`, 콘솔 QR).
 
-3. **정적 export**  
-   Next `output: 'export'`는 ait 빌드와 맞추기 까다로움 → 공식은 **create-ait-app** 템플릿 권장.
+심사에서 iframe이 거절되면 TDS 네이티브 UI로 단계 이식합니다.
 
 ---
 
