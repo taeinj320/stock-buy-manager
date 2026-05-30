@@ -1,9 +1,9 @@
 import type { StatusTier } from "@/lib/evaluation/types";
 
 const STYLES: Record<StatusTier, string> = {
-  ok: "bg-emerald-100 text-emerald-800 border-emerald-200",
-  caution: "bg-amber-100 text-amber-900 border-amber-200",
-  unsuitable: "bg-red-100 text-red-800 border-red-200",
+  ok: "bg-emerald-50/90 text-emerald-800 border-emerald-200/80 backdrop-blur-sm",
+  caution: "bg-amber-50/90 text-amber-900 border-amber-200/80 backdrop-blur-sm",
+  unsuitable: "bg-rose-50/90 text-rose-800 border-rose-200/80 backdrop-blur-sm",
 };
 
 export function StatusBadge({
@@ -15,7 +15,7 @@ export function StatusBadge({
 }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center rounded-md border px-2.5 py-0.5 text-sm font-medium ${STYLES[tier]}`}
+      className={`inline-flex shrink-0 items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold sm:text-sm ${STYLES[tier]}`}
     >
       {label}
     </span>

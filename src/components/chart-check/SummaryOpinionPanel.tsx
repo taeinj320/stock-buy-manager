@@ -75,7 +75,7 @@ export function SummaryOpinionPanel({
       target={externalView}
       onClose={() => setExternalView(null)}
     />
-    <div className="mt-6 space-y-4 border-t border-zinc-200 pt-4">
+    <div className="mt-6 space-y-4 border-t border-slate-200/80 pt-4">
       <details className="group">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-1 py-2 hover:bg-zinc-50 [&::-webkit-details-marker]:hidden">
           <div>
@@ -87,7 +87,7 @@ export function SummaryOpinionPanel({
           <ChevronDown />
         </summary>
 
-        <div className="mt-3 rounded-lg border border-amber-100 bg-amber-50/80 px-4 py-4">
+        <div className="mt-3 rounded-xl border border-amber-100/80 bg-amber-50/70 px-4 py-4 backdrop-blur-sm">
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-sm font-medium text-zinc-900">{opinion.headline}</p>
             <BiasBadge dominant={bias.dominant} />

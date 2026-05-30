@@ -4,14 +4,14 @@ import { StatusBadge } from "./StatusBadge";
 
 export function ResultList({ results }: { results: EvaluationResult[] }) {
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-3">
       {results.map((r) => (
         <li
           key={r.indicatorId}
-          className="border-b border-zinc-100 pb-4 last:border-0 last:pb-0"
+          className="rounded-xl border border-slate-100/80 bg-slate-50/40 p-4 last:mb-0"
         >
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="text-base font-semibold text-zinc-900">
+            <span className="text-base font-semibold text-slate-900">
               {r.name}
             </span>
             <StatusBadge label={r.label} tier={r.tier} />

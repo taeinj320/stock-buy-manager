@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/cn";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
 export interface ExternalContentTarget {
@@ -100,22 +101,34 @@ function ExternalContentModalBody({
 
   const showIframe = embeddable && !resolving && displayUrl;
 
+  const contentMinH = "min-h-[min(65dvh,560px)] sm:min-h-[min(70vh,560px)]";
+
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center p-0 sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="external-modal-title"
     >
       <button
         type="button"
-        className="absolute inset-0 bg-zinc-900/55 backdrop-blur-[2px]"
+        className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
         aria-label="닫기"
         onClick={onClose}
       />
 
-      <div className="relative flex max-h-[min(92dvh,820px)] w-full max-w-4xl flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-2xl sm:max-h-[min(90vh,820px)]">
-        <header className="flex shrink-0 items-start gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-3">
+      <div
+        className={cn(
+          "safe-bottom relative flex max-h-[92dvh] w-full max-w-4xl flex-col overflow-hidden",
+          "rounded-t-2xl border border-white/60 bg-white/95 shadow-2xl backdrop-blur-xl",
+          "sm:max-h-[min(90vh,820px)] sm:rounded-2xl",
+        )}
+      >
+        <div
+          className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-slate-300 sm:hidden"
+          aria-hidden
+        />
+        <header className="flex shrink-0 items-start gap-3 border-b border-slate-200/80 bg-slate-50/80 px-4 py-3">
           <div className="min-w-0 flex-1">
             <p
               id="external-modal-title"
@@ -132,21 +145,21 @@ function ExternalContentModalBody({
               type="button"
               onClick={openPopupWindow}
               disabled={resolving || !displayUrl}
-              className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-[11px] font-medium text-zinc-700 hover:bg-zinc-100 disabled:opacity-50"
+              className="min-h-10 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
             >
               새 창
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg bg-zinc-900 px-2.5 py-1.5 text-[11px] font-medium text-white hover:bg-zinc-800"
+              className="min-h-10 rounded-xl bg-slate-900 px-3 py-2 text-xs font-medium text-white hover:bg-slate-800"
             >
               닫기
             </button>
           </div>
         </header>
 
-        <div className="relative min-h-[min(70vh,560px)] flex-1 bg-white">
+        <div className={cn("relative flex-1 bg-white", contentMinH)}>
           {resolving && (
             <div className="absolute inset-0 flex items-center justify-center text-sm text-zinc-500">
               원문 주소 확인 중…
@@ -154,7 +167,12 @@ function ExternalContentModalBody({
           )}
 
           {!resolving && !embeddable && (
-            <div className="flex h-full min-h-[min(70vh,560px)] flex-col items-center justify-center gap-4 px-6 text-center">
+            <div
+              className={cn(
+                "flex h-full flex-col items-center justify-center gap-4 px-6 text-center",
+                contentMinH,
+              )}
+            >
               <p className="text-sm text-zinc-700">
                 Google 뉴스 중간 페이지는 앱 안에서 열 수 없습니다.
                 <br />
@@ -163,7 +181,7 @@ function ExternalContentModalBody({
               <button
                 type="button"
                 onClick={openPopupWindow}
-                className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+                className="min-h-11 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:from-sky-500 hover:to-indigo-500"
               >
                 기사 열기 (새 창)
               </button>
@@ -184,7 +202,7 @@ function ExternalContentModalBody({
                 key={displayUrl}
                 title={target.title}
                 src={embedSrc(displayUrl)}
-                className="h-full min-h-[min(70vh,560px)] w-full border-0"
+                className={cn("h-full w-full border-0", contentMinH)}
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
                 onLoad={() => setLoading(false)}
               />

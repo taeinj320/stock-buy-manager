@@ -29,19 +29,19 @@ export function IndicatorSettingsModal({
         onChange={(e) =>
           onChange({ ...params, [key]: Number(e.target.value) })
         }
-        className="rounded-lg border border-zinc-200 px-3 py-2 text-zinc-900 outline-none focus:ring-2 focus:ring-blue-500"
+        className="min-h-11 rounded-xl border border-slate-200 bg-white px-3 py-2 text-zinc-900 outline-none focus:ring-2 focus:ring-sky-500"
       />
     </label>
   );
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-900/45 p-0 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="w-full max-w-sm rounded-xl bg-white p-5 shadow-xl"
+        className="safe-bottom w-full max-w-sm rounded-t-2xl border border-white/60 bg-white/95 p-5 shadow-2xl backdrop-blur-xl sm:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-labelledby="settings-title"
@@ -53,7 +53,7 @@ export function IndicatorSettingsModal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-zinc-500 hover:bg-zinc-100"
+            className="flex min-h-10 min-w-10 items-center justify-center rounded-xl text-zinc-500 hover:bg-zinc-100"
             aria-label="닫기"
           >
             ✕
@@ -95,7 +95,7 @@ export function IndicatorSettingsModal({
         <button
           type="button"
           onClick={onClose}
-          className="mt-5 w-full rounded-lg bg-zinc-900 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+          className="mt-5 min-h-11 w-full rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 py-3 text-sm font-semibold text-white shadow-md hover:from-sky-500 hover:to-indigo-500"
         >
           확인
         </button>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "ChartCheck",
   description:
     "지표별 독립 기술적 분석 — 매수/매도 추천 없음",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#f0f9ff",
 };
 
 export default function RootLayout({

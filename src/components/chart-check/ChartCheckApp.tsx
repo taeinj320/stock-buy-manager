@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { GlassCard } from "@/components/ui/glass-card";
+import { PrimaryButton } from "@/components/ui/primary-button";
+import { cn } from "@/lib/cn";
 import { INDICATOR_CATALOG } from "@/lib/evaluation/registry";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 import type { EvaluationResult } from "@/lib/evaluation/types";
+import { BarChart3, LineChart, Shield } from "lucide-react";
+import { useState } from "react";
 import type { TimeframeChartData } from "./TradingChart";
 import { TradingChart } from "./TradingChart";
 import { GearIcon } from "./GearIcon";
@@ -139,51 +143,69 @@ export function ChartCheckApp() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-10">
-      <header className="space-y-1 border-b border-zinc-200 pb-6">
-        <h1 className="text-2xl font-bold tracking-tight text-zinc-900">
-          ChartCheck
-        </h1>
-        <p className="text-sm text-zinc-600">
-          지표별 독립 분석 · 매수/매도 추천 없음 · 투자 판단은 사용자 책임
-        </p>
+    <div className="safe-top safe-bottom mx-auto max-w-3xl space-y-5 px-4 py-6 sm:space-y-6 sm:px-5 sm:py-10">
+      <header className="space-y-3">
+        <div className="flex items-start gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25">
+            <LineChart className="h-5 w-5" strokeWidth={2.25} aria-hidden />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+              ChartCheck
+            </h1>
+            <p className="mt-0.5 text-sm leading-relaxed text-slate-600">
+              지표별 독립 분석 · 매수/매도 추천 없음
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-2 rounded-xl border border-sky-100/80 bg-sky-50/60 px-3 py-2.5 text-xs leading-relaxed text-sky-900/90 backdrop-blur-sm">
+          <Shield className="mt-0.5 h-4 w-4 shrink-0 text-sky-600" aria-hidden />
+          <span>투자 판단은 사용자 책임입니다. 본 서비스는 매매를 권유하지 않습니다.</span>
+        </div>
       </header>
 
-      <section className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <GlassCard>
         <StockCombobox value={stock} onChange={setStock} />
-      </section>
+      </GlassCard>
 
-      <section className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-        <h2 className="mb-3 text-sm font-semibold text-zinc-800">분석 지표</h2>
+      <GlassCard>
+        <div className="mb-4 flex items-center gap-2">
+          <BarChart3 className="h-4 w-4 text-indigo-600" aria-hidden />
+          <h2 className="text-sm font-semibold text-slate-800">분석 지표</h2>
+        </div>
         <ul className="space-y-2">
           {INDICATOR_CATALOG.map((meta) => {
             const isSelected = selected.has(meta.id);
             return (
               <li
                 key={meta.id}
-                className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 ${
+                className={cn(
+                  "flex min-h-11 items-center gap-2 rounded-xl border px-3 py-2.5 transition-colors",
                   meta.enabled
-                    ? "border-zinc-200 bg-white"
-                    : "border-zinc-100 bg-zinc-50"
-                }`}
+                    ? isSelected
+                      ? "border-sky-200/80 bg-sky-50/50"
+                      : "border-slate-200/80 bg-white/50 hover:border-slate-300"
+                    : "border-slate-100 bg-slate-50/80",
+                )}
               >
-                <label className="flex min-w-0 flex-1 cursor-pointer items-center gap-2">
+                <label className="flex min-w-0 flex-1 cursor-pointer items-center gap-3">
                   <input
                     type="checkbox"
                     disabled={!meta.enabled}
                     checked={isSelected}
                     onChange={() => meta.enabled && toggle(meta.id)}
-                    className="rounded border-zinc-300"
+                    className="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
                   />
                   <span
-                    className={`text-sm font-medium ${
-                      meta.enabled ? "text-zinc-900" : "text-zinc-400"
-                    }`}
+                    className={cn(
+                      "text-sm font-medium",
+                      meta.enabled ? "text-slate-900" : "text-slate-400",
+                    )}
                   >
                     {meta.name}
                   </span>
                   {!meta.enabled && (
-                    <span className="text-xs text-zinc-400">준비 중</span>
+                    <span className="text-xs text-slate-400">준비 중</span>
                   )}
                 </label>
 
@@ -191,7 +213,7 @@ export function ChartCheckApp() {
                   <button
                     type="button"
                     onClick={() => setSettingsFor(meta.id)}
-                    className="shrink-0 rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800"
+                    className="flex min-h-10 min-w-10 shrink-0 items-center justify-center rounded-xl text-slate-500 transition hover:bg-white/80 hover:text-slate-800"
                     aria-label={`${meta.name} 설정`}
                   >
                     <GearIcon />
@@ -203,20 +225,20 @@ export function ChartCheckApp() {
         </ul>
 
         {error && (
-          <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <div
+            className="mt-4 rounded-xl border border-rose-200/80 bg-rose-50/90 px-4 py-3 text-sm text-rose-800"
+            role="alert"
+          >
             {error}
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={analyze}
-          disabled={loading}
-          className="mt-4 w-full rounded-lg bg-blue-600 py-3 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
-        >
-          {loading ? "분석 중…" : "분석 실행"}
-        </button>
-      </section>
+        <div className="mt-5">
+          <PrimaryButton onClick={analyze} disabled={loading}>
+            {loading ? "분석 중…" : "분석 실행"}
+          </PrimaryButton>
+        </div>
+      </GlassCard>
 
       {(chartData || chartLoading) && (
         <TradingChart
@@ -229,15 +251,15 @@ export function ChartCheckApp() {
       )}
 
       {results.length > 0 && (
-        <section className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-          <h2 className="mb-4 text-sm font-semibold text-zinc-800">분석 결과</h2>
+        <GlassCard>
+          <h2 className="mb-4 text-sm font-semibold text-slate-800">분석 결과</h2>
           <ResultList results={results} />
           <SummaryOpinionPanel
             results={results}
             stockCode={stock?.code ?? null}
             stockName={stock?.name ?? null}
           />
-        </section>
+        </GlassCard>
       )}
 
       {settingsMeta && settingsFor && (

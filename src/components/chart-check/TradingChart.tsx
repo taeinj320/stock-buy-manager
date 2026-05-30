@@ -23,8 +23,11 @@ import {
   createChart,
   type IChartApi,
 } from "lightweight-charts";
+import { useChartHeight } from "@/hooks/use-chart-height";
+import { cn } from "@/lib/cn";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChartOverlayPicker } from "./ChartOverlayPicker";
+import { GlassCard } from "@/components/ui/glass-card";
 
 type Timeframe = "daily" | "weekly" | "monthly";
 
@@ -53,8 +56,6 @@ interface Props {
   onVisibleOverlaysChange: (next: Set<IndicatorId>) => void;
 }
 
-const CHART_HEIGHT = 520;
-
 export function TradingChart({
   data,
   loading,
@@ -62,6 +63,7 @@ export function TradingChart({
   visibleOverlays,
   onVisibleOverlaysChange,
 }: Props) {
+  const chartHeight = useChartHeight();
   const [tab, setTab] = useState<Timeframe>("daily");
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
@@ -88,17 +90,17 @@ export function TradingChart({
     containerRef.current.replaceChildren();
     const chart = createChart(containerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: "#ffffff" },
-        textColor: "#52525b",
+        background: { type: ColorType.Solid, color: "transparent" },
+        textColor: "#64748b",
       },
       grid: {
-        vertLines: { color: "#f4f4f5" },
-        horzLines: { color: "#f4f4f5" },
+        vertLines: { color: "rgba(148, 163, 184, 0.15)" },
+        horzLines: { color: "rgba(148, 163, 184, 0.15)" },
       },
       width: containerRef.current.clientWidth,
-      height: CHART_HEIGHT,
-      timeScale: { borderColor: "#e4e4e7", timeVisible: true },
-      rightPriceScale: { borderColor: "#e4e4e7" },
+      height: chartHeight,
+      timeScale: { borderColor: "rgba(148, 163, 184, 0.25)", timeVisible: true },
+      rightPriceScale: { borderColor: "rgba(148, 163, 184, 0.25)" },
       localization: CHART_LOCALIZATION,
     });
 
@@ -401,30 +403,31 @@ export function TradingChart({
       chart.remove();
       chartRef.current = null;
     };
-  }, [candles, overlays, tab, show]);
+  }, [candles, overlays, tab, show, chartHeight]);
 
   return (
-    <section className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+    <GlassCard className="overflow-hidden">
+      <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-sm font-semibold text-zinc-800">가격 차트</h2>
+          <h2 className="text-sm font-semibold text-slate-800">가격 차트</h2>
           {stockName && (
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-slate-500">
               {stockName} · 전일(완성 봉) · 거래량 항상 표시
             </p>
           )}
         </div>
-        <div className="flex rounded-lg border border-zinc-200 p-0.5">
+        <div className="flex w-full rounded-xl border border-slate-200/80 bg-slate-50/80 p-1 sm:w-auto">
           {TABS.map((t) => (
             <button
               key={t.id}
               type="button"
               onClick={() => setTab(t.id)}
-              className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
+              className={cn(
+                "min-h-9 flex-1 rounded-lg px-3 py-1.5 text-xs font-medium transition sm:flex-none",
                 tab === t.id
-                  ? "bg-zinc-900 text-white"
-                  : "text-zinc-600 hover:bg-zinc-50"
-              }`}
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900",
+              )}
             >
               {t.label}
             </button>
@@ -439,29 +442,34 @@ export function TradingChart({
         />
       )}
 
-      {loading && (
-        <div
-          className="flex items-center justify-center text-sm text-zinc-500"
-          style={{ height: CHART_HEIGHT }}
-        >
-          차트 로딩 중…
-        </div>
-      )}
-
-      {!loading && (!data || !candles?.length) && (
-        <div
-          className="flex items-center justify-center text-sm text-zinc-500"
-          style={{ height: CHART_HEIGHT }}
-        >
-          분석 실행 시 차트가 표시됩니다.
-        </div>
-      )}
-
       <div
-        ref={containerRef}
-        className={`w-full ${loading || !candles?.length ? "hidden" : ""}`}
-        style={{ height: CHART_HEIGHT }}
-      />
-    </section>
+        className="overflow-hidden rounded-xl border border-slate-200/60 bg-white/60"
+        style={{ minHeight: chartHeight }}
+      >
+        {loading && (
+          <div
+            className="flex items-center justify-center text-sm text-slate-500"
+            style={{ height: chartHeight }}
+          >
+            차트 로딩 중…
+          </div>
+        )}
+
+        {!loading && (!data || !candles?.length) && (
+          <div
+            className="flex items-center justify-center text-sm text-slate-500"
+            style={{ height: chartHeight }}
+          >
+            분석 실행 시 차트가 표시됩니다.
+          </div>
+        )}
+
+        <div
+          ref={containerRef}
+          className={cn("w-full", loading || !candles?.length ? "hidden" : "")}
+          style={{ height: chartHeight }}
+        />
+      </div>
+    </GlassCard>
   );
 }

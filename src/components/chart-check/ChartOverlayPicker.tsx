@@ -19,15 +19,15 @@ export function ChartOverlayPicker({ visible, onChange }: Props) {
   }
 
   return (
-    <div className="mb-3 rounded-lg border border-zinc-100 bg-zinc-50 p-3">
-      <p className="mb-2 text-xs font-medium text-zinc-700">
+    <div className="mb-3 rounded-xl border border-slate-200/60 bg-slate-50/70 p-3 backdrop-blur-sm">
+      <p className="mb-2 text-xs font-medium text-slate-700">
         차트 표시 지표{" "}
-        <span className="font-normal text-zinc-500">
+        <span className="font-normal text-slate-500">
           (분석 결과와 별도 · 선택한 것만 차트에 표시)
         </span>
       </p>
       {visible.has("ichimoku") && (
-        <p className="mb-2 text-[10px] text-zinc-500">
+        <p className="mb-2 text-[10px] leading-relaxed text-slate-500">
           일목: 구름 초록=상승·빨강=하락 · 선행스팬 26봉 앞 · 후행스팬(보라 점선) 종가 26봉 뒤
         </p>
       )}
@@ -35,7 +35,7 @@ export function ChartOverlayPicker({ visible, onChange }: Props) {
         {CHARTABLE.map((meta) => (
           <label
             key={meta.id}
-            className="flex cursor-pointer items-center gap-1.5 rounded-md border border-zinc-200 bg-white px-2.5 py-1.5 text-xs"
+            className="flex min-h-9 cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200/80 bg-white/90 px-2.5 py-1.5 text-xs shadow-sm"
           >
             <input
               type="checkbox"
