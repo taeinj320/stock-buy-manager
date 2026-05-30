@@ -29,6 +29,9 @@ http://localhost:3000
 
 `data/krx-universe.json`, `data/dart-corp-map.json`은 저장소에 포함되어 배포 직후 검색·공시가 동작합니다. 주기적으로 `npm run sync:krx` / `sync:dart-corp` 후 커밋하면 데이터를 갱신할 수 있습니다.
 
+**라이브:** https://stock-buy-manager.vercel.app  
+**GitHub:** https://github.com/taeinj320/stock-buy-manager
+
 ## 환경 변수
 
 | 변수 | 설명 |
