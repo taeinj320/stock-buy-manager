@@ -14,6 +14,7 @@ import { GearIcon } from "./GearIcon";
 import { IndicatorSettingsModal } from "./IndicatorSettingsModal";
 import { ResultList } from "./ResultList";
 import { SummaryOpinionPanel } from "./SummaryOpinionPanel";
+import { InstallHint } from "./InstallHint";
 import { StockCombobox, type StockOption } from "./StockCombobox";
 
 type ParamsState = Record<IndicatorId, IndicatorParams>;
@@ -261,6 +262,8 @@ export function ChartCheckApp() {
           />
         </GlassCard>
       )}
+
+      <InstallHint />
 
       {settingsMeta && settingsFor && (
         <IndicatorSettingsModal

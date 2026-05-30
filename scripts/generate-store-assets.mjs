@@ -127,4 +127,16 @@ writeFileSync(
   ),
 );
 
+const ICONS_DIR = path.join(__dirname, "..", "public", "icons");
+mkdirSync(ICONS_DIR, { recursive: true });
+const logoPath = path.join(OUT, "app-logo.png");
+for (const size of [192, 512]) {
+  const name = `icon-${size}.png`;
+  await sharp(logoPath)
+    .resize(size, size)
+    .png()
+    .toFile(path.join(ICONS_DIR, name));
+  console.log(`✓ icons/${name}`);
+}
+
 console.log(`\nSaved to ${OUT}`);

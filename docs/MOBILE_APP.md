@@ -12,10 +12,10 @@ ChartCheck는 **Next.js 웹앱**을 유지한 채, 아래 방식으로 스토어
 
 ## 권장 로드맵
 
-1. **웹** — Vercel 배포 유지 (지금)
-2. **PWA** — manifest, 아이콘, 오프라인 최소 (모바일 UX)
-3. **Capacitor** — `capacitor.config`에 `server.url` 또는 빌드 산출물 연결
-4. **스토어** — 로고·썸네일(웹용) + **실제 앱 스크린샷**(캡처)
+1. **웹** — Vercel 배포 유지 ✅
+2. **PWA** — `manifest.webmanifest`, `public/icons/` ✅
+3. **Capacitor** — `capacitor.config.ts` ✅ → `docs/CAPACITOR_SETUP.md` 따라 `cap add`
+4. **스토어** — 로고·썸네일 + **실제 스크린샷**(캡처)
 
 스크린샷은 목업 PNG가 아니라 **실기/에뮬레이터에서 분석 실행 후 캡처**해야 합니다.
 
