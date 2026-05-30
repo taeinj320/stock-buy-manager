@@ -2,8 +2,9 @@
 
 콘솔 `appName`: **chartcheck**
 
-미니앱은 **웹(Vercel)과 동일한 화면**을 WebView로 불러옵니다.  
-차트·뉴스·공시·종합의견까지 웹과 같습니다.
+미니앱은 **토스 WebView에서 Vercel 웹으로 직접 이동**해 웹과 동일한 화면을 보여 줍니다.  
+(iframe은 WebView에서 빈 화면이 나는 경우가 많아 사용하지 않습니다.)  
+이동이 막히면 **TDS 네이티브 UI**로 차트·6지표·뉴스·공시를 API와 동일하게 표시합니다.
 
 ---
 
@@ -48,7 +49,9 @@ npm run build
 
 | 변수 | 설명 |
 |------|------|
-| `VITE_WEB_URL` | 불러올 웹 URL (기본 프로덕션) |
+| `VITE_WEB_URL` | 리다이렉트할 웹 URL (기본 프로덕션) |
+| `VITE_BOOT_MODE` | `native`면 리다이렉트 없이 TDS만 (QA) |
+| `VITE_API_BASE` | 네이티브 폴백 API 베이스 |
 
 로컬 Next.js를 미니앱에서 보려면:
 

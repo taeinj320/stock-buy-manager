@@ -102,12 +102,14 @@ npx ait deploy --api-key {콘솔 API 키}
 
 ## ChartCheck UI
 
-현재 `chartcheck-mini`는 **Vercel 웹 전체를 WebView iframe**으로 로드합니다.  
-차트·뉴스·공시·종합의견이 **웹과 동일**합니다.
+현재 `chartcheck-mini`는:
 
-로컬 테스트: `chartcheck-mini/README.md` 참고 (`intoss://chartcheck`, 콘솔 QR).
+1. **프로덕션:** WebView가 `https://stock-buy-manager.vercel.app` 로 **직접 이동** (웹과 동일 UI)
+2. **폴백:** 이동 실패 시 TDS + Vercel API (차트·6지표·뉴스·공시)
 
-심사에서 iframe이 거절되면 TDS 네이티브 UI로 단계 이식합니다.
+iframe은 토스 WebView에서 빈 화면이 나와 **사용하지 않습니다**.
+
+로컬 테스트: `chartcheck-mini/README.md` (`intoss://chartcheck`, 콘솔 QR, `VITE_BOOT_MODE=native`).
 
 ---
 
