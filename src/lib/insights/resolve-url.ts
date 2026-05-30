@@ -1,5 +1,4 @@
 import {
-  isAllowedPublisherUrl,
   isEmbeddableHost,
   isGoogleNewsHost,
   parseAllowedHttpUrl,

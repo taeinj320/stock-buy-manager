@@ -32,11 +32,20 @@ function midPrice(bars: OhlcvBar[], end: number, period: number): number | null 
   return (high + low) / 2;
 }
 
+function resolveParams(params: Partial<IchimokuParams>): IchimokuParams {
+  return {
+    tenkanPeriod: params.tenkanPeriod ?? DEFAULT_ICHIMOKU.tenkanPeriod,
+    kijunPeriod: params.kijunPeriod ?? DEFAULT_ICHIMOKU.kijunPeriod,
+    senkouBPeriod: params.senkouBPeriod ?? DEFAULT_ICHIMOKU.senkouBPeriod,
+    displacement: params.displacement ?? DEFAULT_ICHIMOKU.displacement,
+  };
+}
+
 export function computeIchimoku(
   bars: OhlcvBar[],
   params: Partial<IchimokuParams> = {},
 ): IchimokuSeries {
-  const p = { ...DEFAULT_ICHIMOKU, ...params };
+  const p = resolveParams(params);
   const n = bars.length;
   const tenkan: (number | null)[] = new Array(n).fill(null);
   const kijun: (number | null)[] = new Array(n).fill(null);
@@ -70,7 +79,7 @@ export function ichimokuAtBar(
   spanA: number;
   spanB: number;
 } | null {
-  const p = { ...DEFAULT_ICHIMOKU, ...params };
+  const p = resolveParams(params);
   const series = computeIchimoku(bars, p);
   const close = bars[index]?.close;
   const tenkan = series.tenkan[index];
