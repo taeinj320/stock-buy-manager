@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const ASSETS = [
+const WEB_ASSETS = [
   {
     file: "app-logo.png",
     label: "앱 로고",
@@ -27,30 +27,6 @@ const ASSETS = [
     size: "1932 × 828",
     required: true,
   },
-  {
-    file: "screenshot-portrait-1.png",
-    label: "스크린샷 (세로) 1 — 종목 검색",
-    size: "636 × 1048",
-    required: true,
-  },
-  {
-    file: "screenshot-portrait-2.png",
-    label: "스크린샷 (세로) 2 — 분석 결과",
-    size: "636 × 1048",
-    required: true,
-  },
-  {
-    file: "screenshot-portrait-3.png",
-    label: "스크린샷 (세로) 3 — 차트",
-    size: "636 × 1048",
-    required: true,
-  },
-  {
-    file: "screenshot-landscape-1.png",
-    label: "스크린샷 (가로) 1 — 전체 기능",
-    size: "1504 × 741",
-    required: true,
-  },
 ] as const;
 
 function getManifest() {
@@ -59,6 +35,7 @@ function getManifest() {
   try {
     return JSON.parse(readFileSync(p, "utf8")) as {
       generatedAt: string;
+      tagline?: { main: string; sub: string };
       assets: { file: string; bytes: number }[];
     };
   } catch {
@@ -82,19 +59,15 @@ export default function StoreAssetsPage() {
           ← ChartCheck 홈
         </Link>
         <h1 className="mt-4 text-2xl font-bold text-slate-900">
-          스토어 제출용 이미지
+          웹 스토어용 이미지
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
-          앱 마켓 등록 폼에 바로 올릴 수 있는 규격입니다. 각 항목에서
-          다운로드하거나, 터미널에서{" "}
-          <code className="rounded bg-white/80 px-1.5 py-0.5 text-xs">
-            npm run store-assets
-          </code>
-          로 재생성할 수 있습니다.
+          로고·썸네일만 제공합니다. 스크린샷은 앱/웹에서{" "}
+          <strong>실제 화면 캡처</strong> 후 마켓 규격에 맞춰 올려 주세요.
         </p>
-        {manifest?.generatedAt && (
-          <p className="mt-1 text-xs text-slate-500">
-            생성 시각: {new Date(manifest.generatedAt).toLocaleString("ko-KR")}
+        {manifest?.tagline && (
+          <p className="mt-2 rounded-lg border border-sky-100 bg-white/70 px-3 py-2 text-sm text-slate-700">
+            썸네일 문구: 「{manifest.tagline.main}」 / {manifest.tagline.sub}
           </p>
         )}
 
@@ -103,11 +76,11 @@ export default function StoreAssetsPage() {
           download="chartcheck-store-assets.zip"
           className="mt-6 inline-flex min-h-11 items-center rounded-xl border border-sky-200 bg-white/90 px-5 py-2.5 text-sm font-semibold text-sky-800 shadow-sm hover:bg-sky-50"
         >
-          전체 ZIP 한 번에 다운로드
+          로고·썸네일 ZIP 다운로드
         </a>
 
         <ul className="mt-8 space-y-4">
-          {ASSETS.map((item) => (
+          {WEB_ASSETS.map((item) => (
             <li
               key={item.file}
               className="overflow-hidden rounded-2xl border border-white/70 bg-white/85 shadow-sm backdrop-blur-xl"
@@ -118,7 +91,11 @@ export default function StoreAssetsPage() {
                   <img
                     src={`/store-assets/${item.file}`}
                     alt={item.label}
-                    className="max-h-28 max-w-[140px] object-contain"
+                    className={
+                      item.file.includes("thumbnail")
+                        ? "max-h-24 w-full max-w-[220px] object-contain"
+                        : "h-28 w-28 object-contain"
+                    }
                   />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -157,9 +134,8 @@ export default function StoreAssetsPage() {
         </ul>
 
         <p className="mt-8 text-xs leading-relaxed text-slate-500">
-          실제 앱 화면 캡처로 교체하려면 프로덕션에서 분석 실행 후 스크린샷을
-          동일 규격으로 리사이즈해 업로드하는 것을 권장합니다. 위 이미지는
-          브랜드 톤에 맞춘 제출용 목업입니다.
+          네이티브 앱은 웹을 유지한 채 Capacitor 등으로 패키징할 수 있습니다.{" "}
+          <code className="rounded bg-white/80 px-1">docs/MOBILE_APP.md</code> 참고.
         </p>
       </div>
     </div>

@@ -154,7 +154,7 @@ export function ChartCheckApp() {
               ChartCheck
             </h1>
             <p className="mt-0.5 text-sm leading-relaxed text-slate-600">
-              지표별 독립 분석 · 매수/매도 추천 없음
+              차트·뉴스·공시, 한곳에서
             </p>
           </div>
         </div>

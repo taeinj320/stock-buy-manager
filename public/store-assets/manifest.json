@@ -1,47 +1,28 @@
 {
-  "generatedAt": "2026-05-30T14:54:22.854Z",
+  "generatedAt": "2026-05-30T14:58:54.554Z",
+  "tagline": {
+    "main": "내 종목, 차트로 먼저 본다",
+    "sub": "흐름·뉴스·공시를 한곳에서"
+  },
   "assets": [
     {
       "file": "app-logo.png",
       "width": 600,
       "height": 600,
-      "bytes": 18683
+      "bytes": 17737
     },
     {
       "file": "app-logo-dark.png",
       "width": 600,
       "height": 600,
-      "bytes": 19993
+      "bytes": 19106
     },
     {
       "file": "thumbnail.png",
       "width": 1932,
       "height": 828,
-      "bytes": 70699
-    },
-    {
-      "file": "screenshot-portrait-1.png",
-      "width": 636,
-      "height": 1048,
-      "bytes": 41714
-    },
-    {
-      "file": "screenshot-portrait-2.png",
-      "width": 636,
-      "height": 1048,
-      "bytes": 43552
-    },
-    {
-      "file": "screenshot-portrait-3.png",
-      "width": 636,
-      "height": 1048,
-      "bytes": 39754
-    },
-    {
-      "file": "screenshot-landscape-1.png",
-      "width": 1504,
-      "height": 741,
-      "bytes": 54335
+      "bytes": 70469
     }
-  ]
+  ],
+  "note": "스크린샷은 프로덕션 앱 실캡처 후 별도 업로드"
 }

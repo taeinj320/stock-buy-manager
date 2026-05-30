@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ChartCheck",
-  description:
-    "지표별 독립 기술적 분석 — 매수/매도 추천 없음",
+  description: "내 종목 차트·뉴스·공시를 한곳에서 — ChartCheck",
 };
 
 export const viewport: Viewport = {
