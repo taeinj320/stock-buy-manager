@@ -6,6 +6,7 @@ import {
   formatKrPrice,
   formatKrVolume,
 } from "@/lib/chart/format";
+import { IchimokuCloudPrimitive } from "@/lib/chart/ichimoku-cloud-primitive";
 import {
   OSCILLATOR_0_100_AUTOSCALE,
   macdAutoscaleProvider,
@@ -132,6 +133,12 @@ export function TradingChart({
       })),
     );
 
+    if (show.ichimoku && overlays?.ichimoku?.cloud.length) {
+      candleSeries.attachPrimitive(
+        new IchimokuCloudPrimitive(overlays.ichimoku.cloud),
+      );
+    }
+
     if (show.bollinger && overlays?.bollinger) {
       const bbOpts = {
         lineWidth: 1 as const,
@@ -194,8 +201,9 @@ export function TradingChart({
         LineSeries,
         {
           ...ichiOpts,
-          color: "rgba(34, 197, 94, 0.85)",
+          color: "rgba(21, 128, 61, 0.9)",
           lineStyle: LineStyle.Dashed,
+          lineWidth: 1,
           title: "선행A",
         },
         paneIndex,
@@ -204,8 +212,9 @@ export function TradingChart({
         LineSeries,
         {
           ...ichiOpts,
-          color: "rgba(249, 115, 22, 0.85)",
+          color: "rgba(194, 65, 12, 0.9)",
           lineStyle: LineStyle.Dashed,
+          lineWidth: 1,
           title: "선행B",
         },
         paneIndex,

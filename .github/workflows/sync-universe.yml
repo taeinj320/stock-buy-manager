@@ -1,0 +1,38 @@
+name: Sync KRX and DART data
+
+on:
+  schedule:
+    # 매주 월 12:00 KST (03:00 UTC)
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync KRX universe
+        run: npm run sync:krx
+        env:
+          DATA_GO_KR_SERVICE_KEY: ${{ secrets.DATA_GO_KR_SERVICE_KEY }}
+
+      - name: Sync DART corp map
+        run: npm run sync:dart-corp
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+
+      - name: Commit data files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update KRX universe and DART corp map"
+          file_pattern: data/*.json

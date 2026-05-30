@@ -26,6 +26,11 @@ export function ChartOverlayPicker({ visible, onChange }: Props) {
           (분석 결과와 별도 · 선택한 것만 차트에 표시)
         </span>
       </p>
+      {visible.has("ichimoku") && (
+        <p className="mb-2 text-[10px] text-zinc-500">
+          일목 구름: 초록=상승(A≥B) · 빨강=하락(A&lt;B) · 선행스팬은 26봉 앞에 표시
+        </p>
+      )}
       <div className="flex flex-wrap gap-2">
         {CHARTABLE.map((meta) => (
           <label

@@ -32,6 +32,13 @@ http://localhost:3000
 **라이브:** https://stock-buy-manager.vercel.app  
 **GitHub:** https://github.com/taeinj320/stock-buy-manager
 
+로드맵·의사결정 항목: [docs/ROADMAP.md](docs/ROADMAP.md)
+
+### 주간 데이터 자동 갱신 (선택)
+
+GitHub 저장소 Settings → Secrets에 `DATA_GO_KR_SERVICE_KEY`, `DART_API_KEY` 등록 후  
+`.github/workflows/sync-universe.yml` 이 매주 월요일 `data/*.json` 을 갱신·커밋합니다.
+
 ## 환경 변수
 
 | 변수 | 설명 |

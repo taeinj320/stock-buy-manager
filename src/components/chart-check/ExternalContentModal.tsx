@@ -109,7 +109,7 @@ export function ExternalContentModal({ target, onClose }: Props) {
         onClick={onClose}
       />
 
-      <div className="relative flex max-h-[min(90vh,820px)] w-full max-w-4xl flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-2xl">
+      <div className="relative flex max-h-[min(92dvh,820px)] w-full max-w-4xl flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-2xl sm:max-h-[min(90vh,820px)]">
         <header className="flex shrink-0 items-start gap-3 border-b border-zinc-200 bg-zinc-50 px-4 py-3">
           <div className="min-w-0 flex-1">
             <p

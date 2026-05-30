@@ -1,5 +1,6 @@
 import type { OhlcvBar } from "@/lib/evaluation/types";
 import type { ChartOverlays, LinePoint } from "@/lib/market-data/ohlcv-utils";
+import { mergeIchimokuCloudPoints } from "@/lib/chart/ichimoku-cloud-primitive";
 import { computeIchimoku } from "@/lib/indicators/ichimoku";
 import { bollinger, ema, sma } from "@/lib/indicators/math";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
@@ -199,11 +200,14 @@ export function buildChartOverlays(
       senkouBPeriod: paramsMap.ichimoku?.senkouBPeriod,
       displacement,
     });
+    const spanA = lineFromSeriesDisplaced(bars, series.spanA, displacement);
+    const spanB = lineFromSeriesDisplaced(bars, series.spanB, displacement);
     overlays.ichimoku = {
       tenkan: lineFromSeries(bars, series.tenkan),
       kijun: lineFromSeries(bars, series.kijun),
-      spanA: lineFromSeriesDisplaced(bars, series.spanA, displacement),
-      spanB: lineFromSeriesDisplaced(bars, series.spanB, displacement),
+      spanA,
+      spanB,
+      cloud: mergeIchimokuCloudPoints(spanA, spanB),
     };
   }
 
