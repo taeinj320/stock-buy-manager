@@ -1,3 +1,4 @@
+import { resolveNewsLinks } from "./resolve-url";
 import type { NewsItem } from "./types";
 
 const MK_STOCK_RSS = "https://www.mk.co.kr/rss/50200011/";
@@ -108,10 +109,13 @@ export async function fetchStockNews(
 
   items.sort((a, b) => (a.pubDate < b.pubDate ? 1 : -1));
 
+  const sliced = items.slice(0, 10);
+  const resolvedItems = await resolveNewsLinks(sliced);
+
   const note =
-    items.length === 0
+    resolvedItems.length === 0
       ? "최근 7일 내 한경·매경에서 종목명이 제목에 포함된 기사를 찾지 못했습니다. (매경 증권 RSS + 한경 Google 뉴스 검색)"
       : undefined;
 
-  return { items: items.slice(0, 10), note };
+  return { items: resolvedItems, note };
 }

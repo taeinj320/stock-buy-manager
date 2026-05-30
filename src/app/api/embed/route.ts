@@ -1,26 +1,10 @@
+import {
+  isEmbeddableHost,
+  isGoogleNewsHost,
+  parseAllowedHttpUrl,
+} from "@/lib/insights/allowed-hosts";
+import { resolveExternalUrl } from "@/lib/insights/resolve-url";
 import { NextResponse } from "next/server";
-
-const ALLOWED_HOSTS = new Set([
-  "www.mk.co.kr",
-  "mk.co.kr",
-  "www.hankyung.com",
-  "hankyung.com",
-  "dart.fss.or.kr",
-  "finance.naver.com",
-  "news.google.com",
-  "www.google.com",
-]);
-
-function isAllowedUrl(raw: string): URL | null {
-  try {
-    const u = new URL(raw);
-    if (u.protocol !== "https:" && u.protocol !== "http:") return null;
-    if (!ALLOWED_HOSTS.has(u.hostname)) return null;
-    return u;
-  } catch {
-    return null;
-  }
-}
 
 export async function GET(req: Request) {
   const raw = new URL(req.url).searchParams.get("url");
@@ -28,10 +12,19 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "url 필요" }, { status: 400 });
   }
 
-  const target = isAllowedUrl(raw);
-  if (!target) {
+  const resolved = await resolveExternalUrl(raw);
+  const target = parseAllowedHttpUrl(resolved.url);
+
+  if (
+    !target ||
+    isGoogleNewsHost(target.hostname) ||
+    !isEmbeddableHost(target.hostname)
+  ) {
     return new NextResponse(
-      `<!DOCTYPE html><html><body><p>허용되지 않은 링크입니다.</p></body></html>`,
+      `<!DOCTYPE html><html lang="ko"><body style="font-family:sans-serif;padding:1.5rem">
+        <p>이 링크는 앱 안 미리보기를 지원하지 않습니다.</p>
+        <p><a href="${encodeURI(resolved.url)}" target="_blank" rel="noopener">원문 열기</a></p>
+      </body></html>`,
       { status: 200, headers: { "Content-Type": "text/html; charset=utf-8" } },
     );
   }
@@ -40,7 +33,7 @@ export async function GET(req: Request) {
     const res = await fetch(target.toString(), {
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; ChartCheck/1.0; +https://stock-buy-manager.vercel.app)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         Accept: "text/html,application/xhtml+xml",
       },
       redirect: "follow",
@@ -70,7 +63,6 @@ export async function GET(req: Request) {
       html = `<!DOCTYPE html><html><head>${baseTag}</head><body>${html}</body></html>`;
     }
 
-    /* 앱 내 iframe 표시용 — 원문 사이트 X-Frame-Options 우회하지 않고 우리 응답만 제공 */
     return new NextResponse(html, {
       status: 200,
       headers: {

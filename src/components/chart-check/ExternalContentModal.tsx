@@ -16,14 +16,59 @@ function embedSrc(url: string): string {
   return `/api/embed?url=${encodeURIComponent(url)}`;
 }
 
+function openExternalWindow(url: string) {
+  const w = Math.min(960, window.screen.width - 80);
+  const h = Math.min(720, window.screen.height - 80);
+  const left = Math.round((window.screen.width - w) / 2);
+  const top = Math.round((window.screen.height - h) / 2);
+  const features = `width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes`;
+  const win = window.open(url, "_blank", features);
+  if (!win) {
+    window.open(url, "_blank");
+  }
+}
+
 export function ExternalContentModal({ target, onClose }: Props) {
-  const [loadFailed, setLoadFailed] = useState(false);
+  const [resolvedUrl, setResolvedUrl] = useState<string | null>(null);
+  const [embeddable, setEmbeddable] = useState(true);
+  const [resolving, setResolving] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoadFailed(false);
+    if (!target) {
+      setResolvedUrl(null);
+      return;
+    }
+
+    let cancelled = false;
+    setResolving(true);
     setLoading(true);
-  }, [target?.url]);
+    setResolvedUrl(null);
+    setEmbeddable(true);
+
+    fetch(`/api/resolve-url?url=${encodeURIComponent(target.url)}`)
+      .then((r) => r.json())
+      .then((data: { url?: string; embeddable?: boolean }) => {
+        if (cancelled) return;
+        setResolvedUrl(data.url ?? target.url);
+        setEmbeddable(data.embeddable !== false);
+        if (data.embeddable === false) setLoading(false);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setResolvedUrl(target.url);
+          setEmbeddable(false);
+          setLoading(false);
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setResolving(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [target]);
 
   useEffect(() => {
     if (!target) return;
@@ -39,20 +84,16 @@ export function ExternalContentModal({ target, onClose }: Props) {
     };
   }, [target, onClose]);
 
+  const displayUrl = resolvedUrl ?? target?.url ?? "";
+
   const openPopupWindow = useCallback(() => {
-    if (!target) return;
-    const w = Math.min(960, window.screen.width - 80);
-    const h = Math.min(720, window.screen.height - 80);
-    const left = Math.round((window.screen.width - w) / 2);
-    const top = Math.round((window.screen.height - h) / 2);
-    window.open(
-      target.url,
-      "chartcheck-external",
-      `popup=yes,width=${w},height=${h},left=${left},top=${top},noopener,noreferrer`,
-    );
-  }, [target]);
+    if (!displayUrl) return;
+    openExternalWindow(displayUrl);
+  }, [displayUrl]);
 
   if (!target) return null;
+
+  const showIframe = embeddable && !resolving && displayUrl;
 
   return (
     <div
@@ -77,15 +118,18 @@ export function ExternalContentModal({ target, onClose }: Props) {
             >
               {target.title}
             </p>
-            <p className="mt-0.5 truncate text-[11px] text-zinc-500">{target.url}</p>
+            <p className="mt-0.5 truncate text-[11px] text-zinc-500">
+              {displayUrl || target.url}
+            </p>
           </div>
           <div className="flex shrink-0 items-center gap-1.5">
             <button
               type="button"
               onClick={openPopupWindow}
-              className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-[11px] font-medium text-zinc-700 hover:bg-zinc-100"
+              disabled={resolving || !displayUrl}
+              className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-[11px] font-medium text-zinc-700 hover:bg-zinc-100 disabled:opacity-50"
             >
-              별도 창
+              새 창
             </button>
             <button
               type="button"
@@ -98,41 +142,48 @@ export function ExternalContentModal({ target, onClose }: Props) {
         </header>
 
         <div className="relative min-h-[min(70vh,560px)] flex-1 bg-white">
-          {loading && !loadFailed && (
+          {resolving && (
             <div className="absolute inset-0 flex items-center justify-center text-sm text-zinc-500">
-              불러오는 중…
+              원문 주소 확인 중…
             </div>
           )}
 
-          {loadFailed ? (
-            <div className="flex h-full min-h-[min(70vh,560px)] flex-col items-center justify-center gap-3 px-6 text-center">
+          {!resolving && !embeddable && (
+            <div className="flex h-full min-h-[min(70vh,560px)] flex-col items-center justify-center gap-4 px-6 text-center">
               <p className="text-sm text-zinc-700">
-                이 페이지는 앱 안 미리보기를 지원하지 않습니다.
+                Google 뉴스 중간 페이지는 앱 안에서 열 수 없습니다.
+                <br />
+                원문 사이트에서 기사를 봐 주세요.
               </p>
               <button
                 type="button"
                 onClick={openPopupWindow}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+                className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
               >
-                작은 창으로 열기
+                기사 열기 (새 창)
               </button>
               <p className="text-[11px] text-zinc-500">
                 ChartCheck 화면은 그대로 유지됩니다.
               </p>
             </div>
-          ) : (
-            <iframe
-              key={target.url}
-              title={target.title}
-              src={embedSrc(target.url)}
-              className="h-full min-h-[min(70vh,560px)] w-full border-0"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
-              onLoad={() => setLoading(false)}
-              onError={() => {
-                setLoading(false);
-                setLoadFailed(true);
-              }}
-            />
+          )}
+
+          {showIframe && (
+            <>
+              {loading && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-white text-sm text-zinc-500">
+                  불러오는 중…
+                </div>
+              )}
+              <iframe
+                key={displayUrl}
+                title={target.title}
+                src={embedSrc(displayUrl)}
+                className="h-full min-h-[min(70vh,560px)] w-full border-0"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
+                onLoad={() => setLoading(false)}
+              />
+            </>
           )}
         </div>
       </div>

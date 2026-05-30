@@ -1,4 +1,5 @@
 import type { EvaluationResult } from "@/lib/evaluation/types";
+import { IndicatorGuide } from "./IndicatorGuide";
 import { StatusBadge } from "./StatusBadge";
 
 export function ResultList({ results }: { results: EvaluationResult[] }) {
@@ -23,6 +24,7 @@ export function ResultList({ results }: { results: EvaluationResult[] }) {
           {r.trendNote && (
             <p className="mt-2 text-xs text-zinc-500">{r.trendNote}</p>
           )}
+          <IndicatorGuide indicatorId={r.indicatorId} />
         </li>
       ))}
     </ul>
