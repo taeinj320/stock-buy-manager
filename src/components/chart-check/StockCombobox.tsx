@@ -15,6 +15,16 @@ interface Props {
 }
 
 export function StockCombobox({ value, onChange }: Props) {
+  return (
+    <StockComboboxInner
+      key={value?.code ?? "__none__"}
+      value={value}
+      onChange={onChange}
+    />
+  );
+}
+
+function StockComboboxInner({ value, onChange }: Props) {
   const [query, setQuery] = useState(value?.name ?? "");
   const [items, setItems] = useState<StockOption[]>([]);
   const [open, setOpen] = useState(false);
@@ -43,10 +53,6 @@ export function StockCombobox({ value, onChange }: Props) {
       if (debounceRef.current) clearTimeout(debounceRef.current);
     };
   }, [query, search]);
-
-  useEffect(() => {
-    if (value) setQuery(value.name);
-  }, [value]);
 
   return (
     <div className="relative">

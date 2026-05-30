@@ -62,40 +62,10 @@ export function SummaryOpinionPanel({
   stockName: string | null;
 }) {
   const opinion = buildSummaryOpinion(results);
-  const [insights, setInsights] = useState<StockInsights | null>(null);
-  const [insightsLoading, setInsightsLoading] = useState(false);
   const [externalView, setExternalView] = useState<ExternalContentTarget | null>(
     null,
   );
-
-  useEffect(() => {
-    if (!stockCode || !stockName || results.length === 0) {
-      setInsights(null);
-      return;
-    }
-
-    let cancelled = false;
-    setInsightsLoading(true);
-    fetch("/api/insights", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ code: stockCode, name: stockName }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!cancelled && !data.error) setInsights(data as StockInsights);
-      })
-      .catch(() => {
-        if (!cancelled) setInsights(null);
-      })
-      .finally(() => {
-        if (!cancelled) setInsightsLoading(false);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [stockCode, stockName, results]);
+  const showInsights = Boolean(stockCode && stockName && results.length > 0);
 
   const bias = opinion.technicalBias;
 
@@ -170,38 +140,95 @@ export function SummaryOpinionPanel({
       <section className="space-y-3" aria-label="뉴스·공시·리서치">
         <h3 className="text-sm font-semibold text-zinc-800">뉴스 · 공시 · 리서치</h3>
 
-        {insightsLoading && (
-          <p className="text-xs text-zinc-500">불러오는 중…</p>
-        )}
-
-        {!insightsLoading && !insights && (
+        {!showInsights && (
           <p className="text-xs text-zinc-500">
             분석 후 자동으로 조회됩니다.
           </p>
         )}
 
-        {insights && (
-          <div className="space-y-3">
-            <InsightSection title="한국경제·매일경제 최근 언급">
-              {insights.news.length === 0 ? (
-                <p className="text-xs text-zinc-600">
-                  {insights.meta.newsNote ?? "관련 기사 없음"}
-                </p>
-              ) : (
-                <ul className="space-y-2">
-                  {insights.news.map((n) => (
-                    <li key={n.link} className="text-xs">
-                      <span className="mr-1.5 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-medium text-zinc-600">
-                        {n.source}
-                      </span>
-                      <PopupLink
-                        href={n.link}
-                        title={n.title}
-                        onOpen={setExternalView}
-                        className="text-blue-700"
-                      >
-                        {n.title}
-                      </PopupLink>
+        {showInsights && stockCode && stockName && (
+          <StockInsightsFeed
+            key={`${stockCode}-${stockName}`}
+            stockCode={stockCode}
+            stockName={stockName}
+            onOpenExternal={setExternalView}
+          />
+        )}
+      </section>
+    </div>
+    </>
+  );
+}
+
+function StockInsightsFeed({
+  stockCode,
+  stockName,
+  onOpenExternal,
+}: {
+  stockCode: string;
+  stockName: string;
+  onOpenExternal: (target: ExternalContentTarget) => void;
+}) {
+  const [insights, setInsights] = useState<StockInsights | null>(null);
+  const [insightsLoading, setInsightsLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/insights", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code: stockCode, name: stockName }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled && !data.error) setInsights(data as StockInsights);
+      })
+      .catch(() => {
+        if (!cancelled) setInsights(null);
+      })
+      .finally(() => {
+        if (!cancelled) setInsightsLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [stockCode, stockName]);
+
+  if (insightsLoading) {
+    return <p className="text-xs text-zinc-500">불러오는 중…</p>;
+  }
+
+  if (!insights) {
+    return (
+      <p className="text-xs text-zinc-500">
+        뉴스·공시를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.
+      </p>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      <InsightSection title="한국경제·매일경제 최근 언급">
+        {insights.news.length === 0 ? (
+          <p className="text-xs text-zinc-600">
+            {insights.meta.newsNote ?? "관련 기사 없음"}
+          </p>
+        ) : (
+          <ul className="space-y-2">
+            {insights.news.map((n) => (
+              <li key={n.link} className="text-xs">
+                <span className="mr-1.5 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-medium text-zinc-600">
+                  {n.source}
+                </span>
+                <PopupLink
+                  href={n.link}
+                  title={n.title}
+                  onOpen={onOpenExternal}
+                  className="text-blue-700"
+                >
+                  {n.title}
+                </PopupLink>
                       {n.pubDate && (
                         <span className="mt-0.5 block text-[10px] text-zinc-400">
                           {n.pubDate}
@@ -225,7 +252,7 @@ export function SummaryOpinionPanel({
                       <PopupLink
                         href={d.link}
                         title={d.reportNm}
-                        onOpen={setExternalView}
+                        onOpen={onOpenExternal}
                         className="font-medium text-blue-700"
                       >
                         {d.reportNm}
@@ -268,7 +295,7 @@ export function SummaryOpinionPanel({
                             <PopupLink
                               href={r.link}
                               title={r.title}
-                              onOpen={setExternalView}
+                              onOpen={onOpenExternal}
                               className="text-blue-700"
                             >
                               {r.title}
@@ -293,12 +320,8 @@ export function SummaryOpinionPanel({
                   {insights.meta.researchNote ?? "리서치 정보 없음"}
                 </p>
               )}
-            </InsightSection>
-          </div>
-        )}
-      </section>
+      </InsightSection>
     </div>
-    </>
   );
 }
 

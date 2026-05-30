@@ -22,12 +22,12 @@ jobs:
       - run: npm ci
 
       - name: Sync KRX universe
-        run: npm run sync:krx
+        run: node scripts/sync-krx-universe.mjs
         env:
           DATA_GO_KR_SERVICE_KEY: ${{ secrets.DATA_GO_KR_SERVICE_KEY }}
 
       - name: Sync DART corp map
-        run: npm run sync:dart-corp
+        run: node scripts/sync-dart-corp-map.mjs
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
 

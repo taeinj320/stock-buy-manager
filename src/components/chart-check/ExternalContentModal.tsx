@@ -29,22 +29,30 @@ function openExternalWindow(url: string) {
 }
 
 export function ExternalContentModal({ target, onClose }: Props) {
+  if (!target) return null;
+  return (
+    <ExternalContentModalBody
+      key={target.url}
+      target={target}
+      onClose={onClose}
+    />
+  );
+}
+
+function ExternalContentModalBody({
+  target,
+  onClose,
+}: {
+  target: ExternalContentTarget;
+  onClose: () => void;
+}) {
   const [resolvedUrl, setResolvedUrl] = useState<string | null>(null);
   const [embeddable, setEmbeddable] = useState(true);
-  const [resolving, setResolving] = useState(false);
+  const [resolving, setResolving] = useState(true);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!target) {
-      setResolvedUrl(null);
-      return;
-    }
-
     let cancelled = false;
-    setResolving(true);
-    setLoading(true);
-    setResolvedUrl(null);
-    setEmbeddable(true);
 
     fetch(`/api/resolve-url?url=${encodeURIComponent(target.url)}`)
       .then((r) => r.json())
@@ -71,7 +79,6 @@ export function ExternalContentModal({ target, onClose }: Props) {
   }, [target]);
 
   useEffect(() => {
-    if (!target) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
@@ -82,16 +89,14 @@ export function ExternalContentModal({ target, onClose }: Props) {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
     };
-  }, [target, onClose]);
+  }, [onClose]);
 
-  const displayUrl = resolvedUrl ?? target?.url ?? "";
+  const displayUrl = resolvedUrl ?? target.url;
 
   const openPopupWindow = useCallback(() => {
     if (!displayUrl) return;
     openExternalWindow(displayUrl);
   }, [displayUrl]);
-
-  if (!target) return null;
 
   const showIframe = embeddable && !resolving && displayUrl;
 

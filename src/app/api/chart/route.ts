@@ -2,18 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { buildChartOverlays } from "@/lib/chart/overlays";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 import { fetchOhlcv } from "@/lib/market-data/yahoo";
-import {
-  toChartCandles,
-  type ChartInterval,
-} from "@/lib/market-data/ohlcv-utils";
+import { toChartCandles } from "@/lib/market-data/ohlcv-utils";
 import { findByCode } from "@/lib/stocks/universe";
-
-type IntervalKey = "daily" | "weekly" | "monthly";
-const INTERVAL_MAP: Record<IntervalKey, ChartInterval> = {
-  daily: "1d",
-  weekly: "1wk",
-  monthly: "1mo",
-};
 
 function resolveSymbol(code?: string | null, yahooSymbol?: string | null) {
   if (code) {
