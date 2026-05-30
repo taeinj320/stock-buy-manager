@@ -4,6 +4,11 @@ import { useEffect, useState, type ReactNode } from "react";
 import { buildSummaryOpinion } from "@/lib/evaluation/summary-opinion";
 import type { EvaluationResult } from "@/lib/evaluation/types";
 import type { StockInsights } from "@/lib/insights/types";
+import {
+  ExternalContentModal,
+  PopupLink,
+  type ExternalContentTarget,
+} from "./ExternalContentModal";
 
 function ChevronDown() {
   return (
@@ -59,6 +64,9 @@ export function SummaryOpinionPanel({
   const opinion = buildSummaryOpinion(results);
   const [insights, setInsights] = useState<StockInsights | null>(null);
   const [insightsLoading, setInsightsLoading] = useState(false);
+  const [externalView, setExternalView] = useState<ExternalContentTarget | null>(
+    null,
+  );
 
   useEffect(() => {
     if (!stockCode || !stockName || results.length === 0) {
@@ -92,6 +100,11 @@ export function SummaryOpinionPanel({
   const bias = opinion.technicalBias;
 
   return (
+    <>
+    <ExternalContentModal
+      target={externalView}
+      onClose={() => setExternalView(null)}
+    />
     <div className="mt-6 space-y-4 border-t border-zinc-200 pt-4">
       <details className="group">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-1 py-2 hover:bg-zinc-50 [&::-webkit-details-marker]:hidden">
@@ -181,14 +194,14 @@ export function SummaryOpinionPanel({
                       <span className="mr-1.5 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-medium text-zinc-600">
                         {n.source}
                       </span>
-                      <a
+                      <PopupLink
                         href={n.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700 hover:underline"
+                        title={n.title}
+                        onOpen={setExternalView}
+                        className="text-blue-700"
                       >
                         {n.title}
-                      </a>
+                      </PopupLink>
                       {n.pubDate && (
                         <span className="mt-0.5 block text-[10px] text-zinc-400">
                           {n.pubDate}
@@ -209,14 +222,14 @@ export function SummaryOpinionPanel({
                 <ul className="space-y-2">
                   {insights.disclosures.map((d) => (
                     <li key={d.link} className="text-xs">
-                      <a
+                      <PopupLink
                         href={d.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-700 hover:underline"
+                        title={d.reportNm}
+                        onOpen={setExternalView}
+                        className="font-medium text-blue-700"
                       >
                         {d.reportNm}
-                      </a>
+                      </PopupLink>
                       <span className="ml-1 text-zinc-500">({d.rceptDt})</span>
                     </li>
                   ))}
@@ -252,14 +265,14 @@ export function SummaryOpinionPanel({
                       <ul className="space-y-1.5">
                         {insights.research.recentReports.map((r) => (
                           <li key={r.link + r.date}>
-                            <a
+                            <PopupLink
                               href={r.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-700 hover:underline"
+                              title={r.title}
+                              onOpen={setExternalView}
+                              className="text-blue-700"
                             >
                               {r.title}
-                            </a>
+                            </PopupLink>
                             <span className="text-zinc-500">
                               {" "}
                               · {r.broker} · {r.date}
@@ -285,6 +298,7 @@ export function SummaryOpinionPanel({
         )}
       </section>
     </div>
+    </>
   );
 }
 
