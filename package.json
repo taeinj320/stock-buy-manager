@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sync:krx": "node --env-file=.env.local scripts/sync-krx-universe.mjs",
-    "sync:dart-corp": "node --env-file=.env.local scripts/sync-dart-corp-map.mjs"
+    "sync:dart-corp": "node --env-file=.env.local scripts/sync-dart-corp-map.mjs",
+    "store-assets": "node scripts/generate-store-assets.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -28,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

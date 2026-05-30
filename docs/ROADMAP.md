@@ -11,6 +11,7 @@
 - [x] 주간 KRX·DART 데이터 sync 워크플로 (Actions)
 - [x] 일목 후행스팬(Chikou) 차트 표시
 - [x] UI 리프레시 (글래스·그라데이션·Lucide) · 모바일 UX 1차
+- [x] 스토어 제출용 이미지 (`npm run store-assets`, `/store-assets`)
 
 ## 진행 예정 (우선순위)
 
