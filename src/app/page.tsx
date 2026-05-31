@@ -1,18 +1,11 @@
 import { ChartCheckApp } from "@/components/chart-check/ChartCheckApp";
 import { AppBackground } from "@/components/layout/AppBackground";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ toss_mini?: string }>;
-}) {
-  const params = await searchParams;
-  const inTossMini = params.toss_mini === "1";
-
+export default function Home() {
   return (
     <div className="relative min-h-[100dvh]">
       <AppBackground />
-      <ChartCheckApp inTossMini={inTossMini} />
+      <ChartCheckApp />
     </div>
   );
 }

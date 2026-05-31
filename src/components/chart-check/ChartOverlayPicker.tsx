@@ -35,7 +35,7 @@ export function ChartOverlayPicker({ visible, onChange }: Props) {
         {CHARTABLE.map((meta) => (
           <label
             key={meta.id}
-            className="flex min-h-9 cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200/80 bg-white/90 px-2.5 py-1.5 text-xs shadow-sm"
+            className="flex min-h-11 cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-xs shadow-sm active:bg-sky-50/80"
           >
             <input
               type="checkbox"

@@ -41,4 +41,4 @@
 - [x] 팝업: sm 이상 중앙 모달, sm 미만 하단 시트
 - [x] 차트 높이: 뷰포트 비율 반영
 - [x] `viewport-fit=cover` + safe-area 패딩
-- [ ] PWA·홈 화면 추가 (미구현)
+- [x] PWA manifest (홈 화면 추가 안내 배너는 제거 — 토스·웹 UX 간소화)

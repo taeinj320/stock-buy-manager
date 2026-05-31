@@ -231,7 +231,7 @@ export function PopupLink({
     <button
       type="button"
       onClick={() => onOpen({ url: href, title })}
-      className={`cursor-pointer text-left hover:underline ${className ?? ""}`}
+      className={`inline-flex min-h-10 w-full cursor-pointer items-center py-1.5 text-left hover:underline active:text-blue-900 ${className ?? ""}`}
     >
       {children}
     </button>

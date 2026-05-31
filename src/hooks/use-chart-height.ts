@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-const MIN = 280;
+const MIN = 260;
 const MAX_DESKTOP = 560;
-const MAX_MOBILE = 420;
+const MAX_MOBILE = 360;
 
 export function useChartHeight() {
   const [height, setHeight] = useState(480);
@@ -13,7 +13,7 @@ export function useChartHeight() {
     function update() {
       const mobile = window.innerWidth < 640;
       const cap = mobile ? MAX_MOBILE : MAX_DESKTOP;
-      const ratio = mobile ? 0.42 : 0.48;
+      const ratio = mobile ? 0.36 : 0.48;
       const next = Math.round(
         Math.min(cap, Math.max(MIN, window.innerHeight * ratio)),
       );

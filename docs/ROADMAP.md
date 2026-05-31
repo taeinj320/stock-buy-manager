@@ -12,7 +12,7 @@
 - [x] Vercel · GitHub · 주간 data sync
 - [x] UI 리프레시 · `/api/health`
 - [x] 스토어 로고·썸네일
-- [x] PWA manifest · 홈 화면 안내
+- [x] PWA manifest · ~~홈 화면 안내~~ (안내 배너 제거)
 - [x] Capacitor 설정 (`capacitor.config.ts`, `docs/CAPACITOR_SETUP.md`)
 
 ## 진행 예정

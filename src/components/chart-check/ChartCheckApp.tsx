@@ -14,7 +14,6 @@ import { GearIcon } from "./GearIcon";
 import { IndicatorSettingsModal } from "./IndicatorSettingsModal";
 import { ResultList } from "./ResultList";
 import { SummaryOpinionPanel } from "./SummaryOpinionPanel";
-import { InstallHint } from "./InstallHint";
 import { StockCombobox, type StockOption } from "./StockCombobox";
 
 type ParamsState = Record<IndicatorId, IndicatorParams>;
@@ -29,7 +28,7 @@ const DEFAULT_PARAMS: ParamsState = Object.fromEntries(
   INDICATOR_CATALOG.map((m) => [m.id, { ...m.defaultParams }]),
 ) as ParamsState;
 
-export function ChartCheckApp({ inTossMini = false }: { inTossMini?: boolean }) {
+export function ChartCheckApp() {
   const [stock, setStock] = useState<StockOption | null>(null);
   const [selected, setSelected] = useState<Set<IndicatorId>>(
     () => new Set(INDICATOR_CATALOG.filter((m) => m.enabled).map((m) => m.id)),
@@ -246,7 +245,7 @@ export function ChartCheckApp({ inTossMini = false }: { inTossMini?: boolean }) 
         )}
 
         <div className="mt-5">
-          <PrimaryButton onClick={analyze} disabled={loading}>
+          <PrimaryButton onClick={analyze} disabled={loading} aria-busy={loading}>
             {loading ? "분석 중…" : "분석 실행"}
           </PrimaryButton>
         </div>
@@ -273,8 +272,6 @@ export function ChartCheckApp({ inTossMini = false }: { inTossMini?: boolean }) 
           />
         </GlassCard>
       )}
-
-      {!inTossMini && <InstallHint />}
 
       {settingsMeta && settingsFor && (
         <IndicatorSettingsModal

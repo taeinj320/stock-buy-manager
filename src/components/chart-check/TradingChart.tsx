@@ -423,7 +423,7 @@ export function TradingChart({
               type="button"
               onClick={() => setTab(t.id)}
               className={cn(
-                "min-h-9 flex-1 rounded-lg px-3 py-1.5 text-xs font-medium transition sm:flex-none",
+                "min-h-11 flex-1 rounded-lg px-3 py-2 text-sm font-medium transition sm:min-h-9 sm:flex-none sm:py-1.5 sm:text-xs",
                 tab === t.id
                   ? "bg-white text-slate-900 shadow-sm"
                   : "text-slate-600 hover:text-slate-900",
