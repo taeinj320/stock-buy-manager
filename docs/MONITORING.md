@@ -23,6 +23,15 @@ ChartCheck가 밤에 죽었는지, Vercel·Yahoo 시세 문제인지 **미리 �
 - 홈(`/`)만 보면: 페이지는 떠도 **종목 DB·시세 API**가 깨진 건 모릅니다.
 - `/api/health`는 **KRX 데이터, DART 맵, Yahoo 시세 샘플**까지 한 번에 점검합니다.
 - 정상이면 JSON에 `"ok": true`, `"status": "healthy"` 가 보입니다.
+- Yahoo가 잠깐 실패해도 **HTTP 200 + `"status": "degraded"`** 로 응답합니다 (Vercel Error Rate 오탐 방지).
+- **종목 DB 파일이 없을 때만** HTTP **503** 입니다.
+
+### UptimeRobot 권장 설정
+
+| 방식 | 설정 |
+|------|------|
+| **간단 (추천)** | URL = `https://stock-buy-manager.vercel.app/` → **200만** 확인 |
+| **상세** | URL = `/api/health` → 모니터 타입 **Keyword** → `"status":"healthy"` 포함 시 Up |
 
 브라우저에서 한 번 열어 보세요:  
 https://stock-buy-manager.vercel.app/api/health

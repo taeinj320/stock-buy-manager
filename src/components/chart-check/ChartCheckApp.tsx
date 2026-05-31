@@ -164,7 +164,7 @@ export function ChartCheckApp() {
         </div>
       </header>
 
-      <GlassCard>
+      <GlassCard className="relative z-40 overflow-visible">
         <StockCombobox value={stock} onChange={setStock} />
       </GlassCard>
 

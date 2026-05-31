@@ -44,7 +44,10 @@ async function checkYahoo() {
       headers: { "User-Agent": "ChartCheck/1.0" },
     });
     if (!res.ok) {
-      return { status: "fail" as CheckStatus, message: `HTTP ${res.status}` };
+      return {
+        status: "warn" as CheckStatus,
+        message: `Yahoo HTTP ${res.status} (일시적일 수 있음)`,
+      };
     }
     const json = await res.json();
     const result = json?.chart?.result?.[0];
@@ -54,7 +57,7 @@ async function checkYahoo() {
     return { status: "ok" as CheckStatus, message: "Yahoo 시세 응답 정상" };
   } catch (e) {
     const msg = e instanceof Error ? e.message : "unknown";
-    return { status: "fail" as CheckStatus, message: msg };
+    return { status: "warn" as CheckStatus, message: msg };
   }
 }
 

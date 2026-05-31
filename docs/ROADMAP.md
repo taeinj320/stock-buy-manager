@@ -15,6 +15,13 @@
 - [x] PWA manifest · ~~홈 화면 안내~~ (안내 배너 제거)
 - [x] Capacitor 설정 (`capacitor.config.ts`, `docs/CAPACITOR_SETUP.md`)
 
+## 수정 예정 (UX · 웹)
+
+| # | 항목 | 상태 |
+|---|------|------|
+| 1 | **종목 검색 드롭다운 레이어** | body 포털 + `z-[300]` (배포 대기) |
+| 2 | **health API 503 오탐** | Yahoo 실패 → degraded(200), DB 없음만 503 (배포 대기) |
+
 ## 진행 예정
 
 | # | 항목 | 비고 |
@@ -22,6 +29,7 @@
 | 1 | **스토어 스크린샷** | 실기/웹 캡처 → 마켓 규격 |
 | 2 | **`cap add` + 스토어 빌드** | Android Studio / Xcode |
 | 3 | **UptimeRobot** (선택) | `docs/MONITORING.md` — **연결 완료** |
+| — | **Vercel Production Checklist** | `docs/VERCEL_PRODUCTION.md` |
 | 3b | **Vercel Web Analytics** | 대시보드 Analytics + `@vercel/analytics` |
 | 4 | **관측 고도화** | Slack 알림 |
 | 5 | **커스텀 도메인** | 보류 |
