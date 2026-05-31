@@ -239,6 +239,7 @@ export function ChartCheckApp() {
           <div
             className="mt-4 rounded-xl border border-rose-200/80 bg-rose-50/90 px-4 py-3 text-sm text-rose-800"
             role="alert"
+            aria-live="polite"
           >
             {error}
           </div>
