@@ -39,6 +39,9 @@
 
 **이미 연결돼 있으면** 별도 설정 없이 동작합니다. 체크리스트는 “한 번이라도 Preview 배포가 있었는지”를 권장하는 안내입니다.
 
+**자동 확인:** `main` 이외 브랜치에 push하거나 PR을 열면 Vercel이 Preview URL을 만듭니다.  
+저장소에 `chore/vercel-preview-checklist` PR이 있으면 Deployments 탭에 **Preview** 항목이 보여야 합니다.
+
 ---
 
 ### 3. Enable Speed Insights (선택)
