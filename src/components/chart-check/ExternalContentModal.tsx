@@ -1,7 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
+import { createPortal } from "react-dom";
 
 export interface ExternalContentTarget {
   url: string;
@@ -11,6 +18,14 @@ export interface ExternalContentTarget {
 interface Props {
   target: ExternalContentTarget | null;
   onClose: () => void;
+}
+
+function subscribeNoop() {
+  return () => {};
+}
+
+function useIsClient() {
+  return useSyncExternalStore(subscribeNoop, () => true, () => false);
 }
 
 function embedSrc(url: string): string {
@@ -30,13 +45,16 @@ function openExternalWindow(url: string) {
 }
 
 export function ExternalContentModal({ target, onClose }: Props) {
-  if (!target) return null;
-  return (
+  const isClient = useIsClient();
+  if (!target || !isClient) return null;
+
+  return createPortal(
     <ExternalContentModalBody
       key={target.url}
       target={target}
       onClose={onClose}
-    />
+    />,
+    document.body,
   );
 }
 
@@ -101,34 +119,33 @@ function ExternalContentModalBody({
 
   const showIframe = embeddable && !resolving && displayUrl;
 
-  const contentMinH = "min-h-[min(65dvh,560px)] sm:min-h-[min(70vh,560px)]";
-
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center p-0 sm:items-center sm:p-6"
+      className="fixed inset-0 z-[200] flex items-end justify-center sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="external-modal-title"
     >
       <button
         type="button"
-        className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-slate-900/55 backdrop-blur-[2px]"
         aria-label="닫기"
         onClick={onClose}
       />
 
       <div
         className={cn(
-          "safe-bottom relative flex max-h-[92dvh] w-full max-w-4xl flex-col overflow-hidden",
-          "rounded-t-2xl border border-white/60 bg-white/95 shadow-2xl backdrop-blur-xl",
-          "sm:max-h-[min(90vh,820px)] sm:rounded-2xl",
+          "safe-bottom relative flex w-full max-w-4xl flex-col overflow-hidden",
+          "h-[min(88dvh,820px)] max-h-[88dvh]",
+          "rounded-t-2xl border border-white/60 bg-white shadow-2xl",
+          "sm:h-auto sm:max-h-[min(85vh,820px)] sm:rounded-2xl",
         )}
       >
         <div
-          className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-slate-300 sm:hidden"
+          className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-slate-300 sm:hidden"
           aria-hidden
         />
-        <header className="flex shrink-0 items-start gap-3 border-b border-slate-200/80 bg-slate-50/80 px-4 py-3">
+        <header className="flex shrink-0 items-start gap-3 border-b border-slate-200/80 bg-slate-50 px-4 py-3">
           <div className="min-w-0 flex-1">
             <p
               id="external-modal-title"
@@ -159,7 +176,7 @@ function ExternalContentModalBody({
           </div>
         </header>
 
-        <div className={cn("relative flex-1 bg-white", contentMinH)}>
+        <div className="relative min-h-0 flex-1 overflow-hidden bg-white">
           {resolving && (
             <div className="absolute inset-0 flex items-center justify-center text-sm text-zinc-500">
               원문 주소 확인 중…
@@ -167,12 +184,7 @@ function ExternalContentModalBody({
           )}
 
           {!resolving && !embeddable && (
-            <div
-              className={cn(
-                "flex h-full flex-col items-center justify-center gap-4 px-6 text-center",
-                contentMinH,
-              )}
-            >
+            <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
               <p className="text-sm text-zinc-700">
                 Google 뉴스 중간 페이지는 앱 안에서 열 수 없습니다.
                 <br />
@@ -202,7 +214,7 @@ function ExternalContentModalBody({
                 key={displayUrl}
                 title={target.title}
                 src={embedSrc(displayUrl)}
-                className={cn("h-full w-full border-0", contentMinH)}
+                className="h-full w-full border-0"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
                 onLoad={() => setLoading(false)}
               />

@@ -448,10 +448,14 @@ export function TradingChart({
       >
         {loading && (
           <div
-            className="flex items-center justify-center text-sm text-slate-500"
+            className="flex flex-col gap-3 p-4"
             style={{ height: chartHeight }}
+            aria-busy="true"
+            aria-label="차트 로딩 중"
           >
-            차트 로딩 중…
+            <div className="h-3 w-24 animate-pulse rounded bg-slate-200" />
+            <div className="flex-1 animate-pulse rounded-lg bg-slate-100" />
+            <div className="h-16 animate-pulse rounded-lg bg-slate-50" />
           </div>
         )}
 

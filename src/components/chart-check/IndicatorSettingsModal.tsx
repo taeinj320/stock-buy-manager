@@ -2,6 +2,8 @@
 
 import type { IndicatorMeta } from "@/lib/evaluation/registry";
 import type { IndicatorParams } from "@/lib/evaluation/types";
+import { useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 
 interface Props {
   meta: IndicatorMeta;
@@ -11,6 +13,14 @@ interface Props {
   onChange: (p: IndicatorParams) => void;
 }
 
+function subscribeNoop() {
+  return () => {};
+}
+
+function useIsClient() {
+  return useSyncExternalStore(subscribeNoop, () => true, () => false);
+}
+
 export function IndicatorSettingsModal({
   meta,
   params,
@@ -18,7 +28,8 @@ export function IndicatorSettingsModal({
   onClose,
   onChange,
 }: Props) {
-  if (!open) return null;
+  const isClient = useIsClient();
+  if (!open || !isClient) return null;
 
   const num = (key: keyof IndicatorParams, label: string, def: number) => (
     <label className="flex flex-col gap-1.5 text-sm">
@@ -34,14 +45,14 @@ export function IndicatorSettingsModal({
     </label>
   );
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-900/45 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      className="fixed inset-0 z-[150] flex items-end justify-center bg-slate-900/45 sm:items-center sm:p-4"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="safe-bottom w-full max-w-sm rounded-t-2xl border border-white/60 bg-white/95 p-5 shadow-2xl backdrop-blur-xl sm:rounded-2xl"
+        className="safe-bottom w-full max-w-sm rounded-t-2xl border border-white/60 bg-white p-5 shadow-2xl sm:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-labelledby="settings-title"
@@ -100,6 +111,7 @@ export function IndicatorSettingsModal({
           확인
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
