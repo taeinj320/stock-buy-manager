@@ -232,18 +232,25 @@ export function PopupLink({
   className,
   children,
   onOpen,
+  compact = false,
 }: {
   href: string;
   title: string;
   className?: string;
   children: ReactNode;
   onOpen: (target: ExternalContentTarget) => void;
+  /** 목록 한 줄 링크용 (기본: 터치 영역 넓은 블록) */
+  compact?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={() => onOpen({ url: href, title })}
-      className={`inline-flex min-h-10 w-full cursor-pointer items-center py-1.5 text-left hover:underline active:text-blue-900 ${className ?? ""}`}
+      className={
+        compact
+          ? `min-w-0 flex-1 cursor-pointer truncate py-0 text-left text-xs text-blue-700 hover:underline active:text-blue-900 ${className ?? ""}`
+          : `inline-flex min-h-10 w-full cursor-pointer items-center py-1.5 text-left hover:underline active:text-blue-900 ${className ?? ""}`
+      }
     >
       {children}
     </button>

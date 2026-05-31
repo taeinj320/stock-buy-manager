@@ -76,12 +76,12 @@ export function SummaryOpinionPanel({
       onClose={() => setExternalView(null)}
     />
     <div className="mt-6 space-y-4 border-t border-slate-200/80 pt-4">
-      <details className="group" open>
+      <details className="group">
         <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-1 py-2 hover:bg-zinc-50 active:bg-zinc-100/80 [&::-webkit-details-marker]:hidden">
           <div>
             <span className="text-sm font-semibold text-zinc-800">종합의견</span>
             <p className="mt-0.5 text-xs text-zinc-500">
-              기술 지표 요약 (매매 권유 아님) · 접어서 숨길 수 있습니다
+              펼쳐서 기술 지표 요약 확인 (매매 권유 아님)
             </p>
           </div>
           <ChevronDown />
@@ -197,11 +197,11 @@ function StockInsightsFeed({
 
   if (insightsLoading) {
     return (
-      <div className="space-y-2" aria-busy="true" aria-label="뉴스 불러오는 중">
+      <div className="space-y-1" aria-busy="true" aria-label="뉴스 불러오는 중">
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="h-14 animate-pulse rounded-lg border border-zinc-200/80 bg-zinc-100/80"
+            className="h-7 animate-pulse rounded border border-zinc-200/80 bg-zinc-100/80"
           />
         ))}
       </div>
@@ -224,28 +224,26 @@ function StockInsightsFeed({
             {insights.meta.newsNote ?? "관련 기사 없음"}
           </p>
         ) : (
-          <ul className="space-y-2">
+          <ul className="divide-y divide-zinc-100">
             {insights.news.map((n) => (
-              <li key={n.link} className="border-b border-zinc-100 pb-2 last:border-0 last:pb-0">
-                <span className="mr-1.5 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-medium text-zinc-600">
+              <li
+                key={n.link}
+                className="flex min-w-0 items-center gap-1.5 py-1"
+              >
+                <span className="shrink-0 rounded bg-zinc-100 px-1 py-0.5 text-[10px] font-medium text-zinc-600">
                   {n.source}
                 </span>
                 <PopupLink
                   href={n.link}
                   title={n.title}
                   onOpen={onOpenExternal}
-                  className="text-sm text-blue-700 sm:text-xs"
+                  compact
                 >
                   {n.title}
                 </PopupLink>
-                      {n.pubDate && (
-                        <span className="mt-0.5 block text-[10px] text-zinc-400">
-                          {n.pubDate}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+              </li>
+            ))}
+          </ul>
               )}
             </InsightSection>
 
@@ -255,18 +253,21 @@ function StockInsightsFeed({
                   {insights.meta.dartNote ?? "공시 없음"}
                 </p>
               ) : (
-                <ul className="space-y-2">
+                <ul className="divide-y divide-zinc-100">
                   {insights.disclosures.map((d) => (
-                    <li key={d.link} className="border-b border-zinc-100 pb-2 last:border-0 last:pb-0">
+                    <li
+                      key={d.link}
+                      className="flex min-w-0 items-center gap-1 py-1 text-xs"
+                    >
                       <PopupLink
                         href={d.link}
                         title={d.reportNm}
                         onOpen={onOpenExternal}
-                        className="text-sm font-medium text-blue-700 sm:text-xs"
+                        compact
                       >
                         {d.reportNm}
                       </PopupLink>
-                      <span className="ml-1 text-zinc-500">({d.rceptDt})</span>
+                      <span className="shrink-0 text-zinc-500">({d.rceptDt})</span>
                     </li>
                   ))}
                 </ul>
@@ -298,19 +299,21 @@ function StockInsightsFeed({
                   {insights.research.recentReports.length > 0 && (
                     <div>
                       <p className="mb-1 font-medium text-zinc-800">최근 리포트</p>
-                      <ul className="space-y-1.5">
+                      <ul className="divide-y divide-zinc-100">
                         {insights.research.recentReports.map((r) => (
-                          <li key={r.link + r.date} className="border-b border-zinc-100 pb-2 last:border-0 last:pb-0">
+                          <li
+                            key={r.link + r.date}
+                            className="flex min-w-0 items-center gap-1 py-1 text-xs"
+                          >
                             <PopupLink
                               href={r.link}
                               title={r.title}
                               onOpen={onOpenExternal}
-                              className="text-sm text-blue-700 sm:text-xs"
+                              compact
                             >
                               {r.title}
                             </PopupLink>
-                            <span className="text-zinc-500">
-                              {" "}
+                            <span className="shrink-0 whitespace-nowrap text-zinc-500">
                               · {r.broker} · {r.date}
                             </span>
                           </li>
@@ -342,9 +345,9 @@ function InsightSection({
   children: ReactNode;
 }) {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-zinc-50/50 px-4 py-3.5">
+    <div className="rounded-lg border border-zinc-200 bg-zinc-50/50 px-3 py-2">
       <h4 className="text-xs font-semibold text-zinc-800">{title}</h4>
-      <div className="mt-2">{children}</div>
+      <div className="mt-1.5">{children}</div>
     </div>
   );
 }
