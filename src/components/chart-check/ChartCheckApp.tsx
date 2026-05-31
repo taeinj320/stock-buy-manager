@@ -7,7 +7,7 @@ import { INDICATOR_CATALOG } from "@/lib/evaluation/registry";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 import type { EvaluationResult } from "@/lib/evaluation/types";
 import { BarChart3, LineChart, Shield } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { TimeframeChartData } from "./TradingChart";
 import { TradingChart } from "./TradingChart";
 import { GearIcon } from "./GearIcon";
@@ -15,6 +15,9 @@ import { IndicatorSettingsModal } from "./IndicatorSettingsModal";
 import { ResultList } from "./ResultList";
 import { SummaryOpinionPanel } from "./SummaryOpinionPanel";
 import { StockCombobox, type StockOption } from "./StockCombobox";
+import { AlertBanner } from "./AlertBanner";
+import { AnalyzeLoadingPanel } from "./AnalyzeLoadingPanel";
+import { ResultsOverview } from "./ResultsOverview";
 
 type ParamsState = Record<IndicatorId, IndicatorParams>;
 
@@ -43,6 +46,9 @@ export function ChartCheckApp() {
   const [loading, setLoading] = useState(false);
   const [chartLoading, setChartLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [warnings, setWarnings] = useState<string[]>([]);
+  const [chartFailed, setChartFailed] = useState(false);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const settingsMeta = INDICATOR_CATALOG.find((m) => m.id === settingsFor);
 
@@ -59,7 +65,7 @@ export function ChartCheckApp() {
     code: string,
     yahooSymbol: string,
     indicatorPayload: { id: IndicatorId; params: IndicatorParams }[],
-  ) {
+  ): Promise<boolean> {
     setChartLoading(true);
     try {
       const res = await fetch("/api/chart", {
@@ -78,9 +84,11 @@ export function ChartCheckApp() {
           weekly: data.weekly,
           monthly: data.monthly,
         });
+        return true;
       }
+      return false;
     } catch {
-      /* 차트 실패는 분석 결과와 분리 */
+      return false;
     } finally {
       setChartLoading(false);
     }
@@ -98,6 +106,8 @@ export function ChartCheckApp() {
 
     setLoading(true);
     setError(null);
+    setWarnings([]);
+    setChartFailed(false);
     setResults([]);
     setChartData(null);
 
@@ -109,6 +119,8 @@ export function ChartCheckApp() {
       stock.yahooSymbol,
       chartIndicatorPayload,
     );
+
+    let gotResults = false;
 
     try {
       const res = await fetch("/api/analyze", {
@@ -128,19 +140,32 @@ export function ChartCheckApp() {
         setError(data.error ?? "분석에 실패했습니다.");
         return;
       }
-      setResults(data.results ?? []);
+      const nextResults = data.results ?? [];
+      setResults(nextResults);
+      gotResults = nextResults.length > 0;
       if (data.errors?.length) {
-        setError(
-          data.errors.map((e: { message: string }) => e.message).join(" "),
+        setWarnings(
+          data.errors.map((e: { message: string }) => e.message),
         );
       }
     } catch {
-      setError("네트워크 오류가 발생했습니다.");
+      setError("네트워크 오류가 발생했습니다. 연결을 확인한 뒤 다시 시도해 주세요.");
     } finally {
       setLoading(false);
-      await chartPromise;
+      const chartOk = await chartPromise;
+      if (!chartOk) setChartFailed(true);
+      if (gotResults) {
+        requestAnimationFrame(() => {
+          resultsRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      }
     }
   }
+
+  const showChart = chartData || chartLoading || chartFailed;
 
   return (
     <div className="safe-top safe-bottom mx-auto max-w-3xl space-y-5 px-4 py-6 sm:space-y-6 sm:px-5 sm:py-10">
@@ -236,12 +261,25 @@ export function ChartCheckApp() {
         </ul>
 
         {error && (
-          <div
-            className="mt-4 rounded-xl border border-rose-200/80 bg-rose-50/90 px-4 py-3 text-sm text-rose-800"
-            role="alert"
+          <AlertBanner
+            variant="error"
+            title="분석을 완료하지 못했습니다"
+            className="mt-4"
+            action={
+              stock && selected.size > 0 ? (
+                <button
+                  type="button"
+                  onClick={analyze}
+                  disabled={loading}
+                  className="rounded-lg border border-rose-300/80 bg-white px-3 py-1.5 text-sm font-medium text-rose-900 hover:bg-rose-50"
+                >
+                  다시 시도
+                </button>
+              ) : undefined
+            }
           >
             {error}
-          </div>
+          </AlertBanner>
         )}
 
         <div className="mt-5">
@@ -251,19 +289,46 @@ export function ChartCheckApp() {
         </div>
       </GlassCard>
 
-      {(chartData || chartLoading) && (
-        <TradingChart
-          data={chartData}
-          loading={chartLoading}
-          stockName={stock?.name}
-          visibleOverlays={chartVisible}
-          onVisibleOverlaysChange={setChartVisible}
-        />
+      {loading && (
+        <AnalyzeLoadingPanel chartPending={chartLoading} />
+      )}
+
+      {showChart && (
+        <>
+          {chartFailed && !chartLoading && !chartData && (
+            <AlertBanner variant="warning" title="차트만 표시되지 않았습니다">
+              지표 분석 결과는 아래에서 확인할 수 있습니다. 잠시 후 다시 「분석
+              실행」을 눌러 주세요.
+            </AlertBanner>
+          )}
+          {(chartData || chartLoading) && (
+            <TradingChart
+              data={chartData}
+              loading={chartLoading}
+              stockName={stock?.name}
+              visibleOverlays={chartVisible}
+              onVisibleOverlaysChange={setChartVisible}
+            />
+          )}
+        </>
       )}
 
       {results.length > 0 && (
+        <div ref={resultsRef} className="scroll-mt-6">
         <GlassCard>
-          <h2 className="mb-4 text-sm font-semibold text-slate-800">분석 결과</h2>
+          <h2 className="text-sm font-semibold text-slate-800">분석 결과</h2>
+          <div className="mt-3">
+            <ResultsOverview results={results} />
+          </div>
+          {warnings.length > 0 && (
+            <AlertBanner variant="warning" title="일부 지표 참고" className="mb-4">
+              <ul className="list-inside list-disc space-y-1">
+                {warnings.map((msg) => (
+                  <li key={msg}>{msg}</li>
+                ))}
+              </ul>
+            </AlertBanner>
+          )}
           <ResultList results={results} />
           <SummaryOpinionPanel
             results={results}
@@ -271,6 +336,7 @@ export function ChartCheckApp() {
             stockName={stock?.name ?? null}
           />
         </GlassCard>
+        </div>
       )}
 
       {settingsMeta && settingsFor && (

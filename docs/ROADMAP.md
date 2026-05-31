@@ -15,12 +15,11 @@
 - [x] PWA manifest · ~~홈 화면 안내~~ (안내 배너 제거)
 - [x] Capacitor 설정 (`capacitor.config.ts`, `docs/CAPACITOR_SETUP.md`)
 
-## 수정 예정 (UX · 웹)
+## 완료 (최근 UX · 안정성)
 
-| # | 항목 | 상태 |
-|---|------|------|
-| 1 | **종목 검색 드롭다운 레이어** | body 포털 + `z-[300]` (배포 대기) |
-| 2 | **health API 503 오탐** | Yahoo 실패 → degraded(200), DB 없음만 503 (배포 대기) |
+- [x] 종목 검색 드롭다운 body 포털
+- [x] health API Yahoo → degraded(200)
+- [x] **UX 3단계** — 분석 로딩 패널, 오류/경고·재시도, 결과 요약·정렬
 
 ## 진행 예정
 
@@ -33,9 +32,9 @@
 | 3b | **Vercel Web Analytics** | 대시보드 Analytics + `@vercel/analytics` |
 | 4 | **관측 고도화** | Slack 알림 |
 | 5 | **커스텀 도메인** | 보류 |
-| 6 | **수익화** | 광고·유료 (`docs/MONETIZATION.md`) |
+| 6 | **수익화** | 보류 — 정책·신뢰 우선 (`docs/MONETIZATION.md`) |
 
 ## 의사결정
 
 - Finnhub: Yahoo 유지 중
-- 수익화: 트래픽·정책 확인 후
+- 수익화: 앱인토스·스토어 **정책** 확인 후 (트래픽은 광고 등 선택 사항)

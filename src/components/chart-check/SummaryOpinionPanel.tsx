@@ -76,12 +76,12 @@ export function SummaryOpinionPanel({
       onClose={() => setExternalView(null)}
     />
     <div className="mt-6 space-y-4 border-t border-slate-200/80 pt-4">
-      <details className="group">
+      <details className="group" open>
         <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-1 py-2 hover:bg-zinc-50 active:bg-zinc-100/80 [&::-webkit-details-marker]:hidden">
           <div>
             <span className="text-sm font-semibold text-zinc-800">종합의견</span>
             <p className="mt-0.5 text-xs text-zinc-500">
-              펼쳐서 기술 지표 요약 확인 (매매 권유 아님)
+              기술 지표 요약 (매매 권유 아님) · 접어서 숨길 수 있습니다
             </p>
           </div>
           <ChevronDown />
