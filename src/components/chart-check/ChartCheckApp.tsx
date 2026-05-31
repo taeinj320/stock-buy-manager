@@ -169,6 +169,17 @@ export function ChartCheckApp({ inTossMini = false }: { inTossMini?: boolean }) 
         <StockCombobox value={stock} onChange={setStock} />
       </GlassCard>
 
+      {!stock && results.length === 0 && !loading && (
+        <GlassCard className="border-dashed border-sky-200/60 bg-sky-50/30">
+          <p className="text-sm font-medium text-slate-800">시작하기</p>
+          <ol className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-600">
+            <li>1. 위에서 종목을 검색해 선택하세요.</li>
+            <li>2. 분석할 지표를 고른 뒤 「분석 실행」을 누르세요.</li>
+            <li>3. 차트·뉴스·공시를 함께 확인할 수 있습니다.</li>
+          </ol>
+        </GlassCard>
+      )}
+
       <GlassCard>
         <div className="mb-4 flex items-center gap-2">
           <BarChart3 className="h-4 w-4 text-indigo-600" aria-hidden />

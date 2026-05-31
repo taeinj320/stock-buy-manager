@@ -21,7 +21,8 @@
 |---|------|------|
 | 1 | **스토어 스크린샷** | 실기/웹 캡처 → 마켓 규격 |
 | 2 | **`cap add` + 스토어 빌드** | Android Studio / Xcode |
-| 3 | **UptimeRobot** (선택) | `docs/MONITORING.md` |
+| 3 | **UptimeRobot** (선택) | `docs/MONITORING.md` — **연결 완료** |
+| 3b | **Vercel Web Analytics** | 대시보드 Analytics + `@vercel/analytics` |
 | 4 | **관측 고도화** | Slack 알림 |
 | 5 | **커스텀 도메인** | 보류 |
 | 6 | **수익화** | 광고·유료 (`docs/MONETIZATION.md`) |
