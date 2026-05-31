@@ -7,7 +7,6 @@ import { INDICATOR_CATALOG } from "@/lib/evaluation/registry";
 import type { IndicatorId, IndicatorParams } from "@/lib/evaluation/types";
 import type { EvaluationResult } from "@/lib/evaluation/types";
 import { BarChart3, LineChart, Shield } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import type { TimeframeChartData } from "./TradingChart";
 import { TradingChart } from "./TradingChart";
@@ -30,10 +29,7 @@ const DEFAULT_PARAMS: ParamsState = Object.fromEntries(
   INDICATOR_CATALOG.map((m) => [m.id, { ...m.defaultParams }]),
 ) as ParamsState;
 
-export function ChartCheckApp() {
-  const searchParams = useSearchParams();
-  const inTossMini = searchParams.get("toss_mini") === "1";
-
+export function ChartCheckApp({ inTossMini = false }: { inTossMini?: boolean }) {
   const [stock, setStock] = useState<StockOption | null>(null);
   const [selected, setSelected] = useState<Set<IndicatorId>>(
     () => new Set(INDICATOR_CATALOG.filter((m) => m.enabled).map((m) => m.id)),
