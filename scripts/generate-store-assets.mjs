@@ -3,6 +3,7 @@
  * 웹 스토어용 로고·썸네일 (스크린샷은 실제 앱 캡처로 별도)
  * 실행: npm run store-assets
  */
+import { execFileSync } from "child_process";
 import { mkdirSync, writeFileSync, unlinkSync, existsSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -42,15 +43,20 @@ function chartIcon(cx, cy, size, stroke = "#fff") {
     </g>`;
 }
 
+/** 앱 로고: 마켓 심사용 — 그라데이션 마크는 각진 꽉 찬 사각형 (rx 없음) */
 function logoSvg(dark = false) {
   const bg = dark ? "#0f172a" : "#ffffff";
   const title = dark ? "#f8fafc" : "#0f172a";
+  const mark = 420;
+  const markX = (600 - mark) / 2;
+  const markY = 56;
+  const iconCenterY = markY + mark / 2;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
     <defs>${GRAD}</defs>
-    <rect width="600" height="600" fill="${bg}" rx="120"/>
-    <rect x="150" y="130" width="300" height="300" rx="72" fill="url(#brand)"/>
-    ${chartIcon(300, 280, 140)}
-    <text x="300" y="510" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="48" font-weight="700" fill="${title}">ChartCheck</text>
+    <rect width="600" height="600" fill="${bg}"/>
+    <rect x="${markX}" y="${markY}" width="${mark}" height="${mark}" fill="url(#brand)"/>
+    ${chartIcon(300, iconCenterY, 168)}
+    <text x="300" y="530" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="48" font-weight="700" fill="${title}">ChartCheck</text>
   </svg>`;
 }
 
@@ -66,11 +72,11 @@ function thumbnailSvg() {
     <rect width="1932" height="828" fill="url(#dots)"/>
     <ellipse cx="1650" cy="100" rx="300" ry="220" fill="#38bdf8" opacity="0.22"/>
     <ellipse cx="180" cy="720" rx="340" ry="240" fill="#818cf8" opacity="0.16"/>
-    <rect x="100" y="200" width="100" height="100" rx="28" fill="url(#brand)"/>
-    ${chartIcon(150, 250, 56)}
-    <text x="220" y="265" font-family="system-ui,sans-serif" font-size="72" font-weight="700" fill="#0f172a">ChartCheck</text>
-    <text x="220" y="340" font-family="system-ui,sans-serif" font-size="40" font-weight="600" fill="#1e293b">${escXml(THUMB_TAGLINE)}</text>
-    <text x="220" y="395" font-family="system-ui,sans-serif" font-size="28" fill="#64748b">${escXml(THUMB_SUB)}</text>
+    <rect x="100" y="200" width="112" height="112" fill="url(#brand)"/>
+    ${chartIcon(156, 256, 64)}
+    <text x="232" y="265" font-family="system-ui,sans-serif" font-size="72" font-weight="700" fill="#0f172a">ChartCheck</text>
+    <text x="232" y="340" font-family="system-ui,sans-serif" font-size="40" font-weight="600" fill="#1e293b">${escXml(THUMB_TAGLINE)}</text>
+    <text x="232" y="395" font-family="system-ui,sans-serif" font-size="28" fill="#64748b">${escXml(THUMB_SUB)}</text>
   </svg>`;
 }
 
@@ -120,12 +126,21 @@ writeFileSync(
       generatedAt: new Date().toISOString(),
       tagline: { main: THUMB_TAGLINE, sub: THUMB_SUB },
       assets: manifest,
+      logoStyle: "sharp-square-mark",
       note: "스크린샷은 프로덕션 앱 실캡처 후 별도 업로드",
     },
     null,
     2,
   ),
 );
+
+const zipPath = path.join(__dirname, "..", "public", "chartcheck-store-assets.zip");
+execFileSync(
+  "zip",
+  ["-j", zipPath, ...ASSETS.map((a) => path.join(OUT, a.name))],
+  { stdio: "inherit" },
+);
+console.log(`✓ chartcheck-store-assets.zip`);
 
 const ICONS_DIR = path.join(__dirname, "..", "public", "icons");
 mkdirSync(ICONS_DIR, { recursive: true });

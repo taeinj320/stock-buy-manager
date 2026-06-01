@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T15:05:15.066Z",
+  "generatedAt": "2026-06-01T10:42:00.422Z",
   "tagline": {
     "main": "내 종목, 차트로 먼저 본다",
     "sub": "흐름·뉴스·공시를 한곳에서"
@@ -9,20 +9,21 @@
       "file": "app-logo.png",
       "width": 600,
       "height": 600,
-      "bytes": 17737
+      "bytes": 15688
     },
     {
       "file": "app-logo-dark.png",
       "width": 600,
       "height": 600,
-      "bytes": 19106
+      "bytes": 15645
     },
     {
       "file": "thumbnail.png",
       "width": 1932,
       "height": 828,
-      "bytes": 70469
+      "bytes": 70019
     }
   ],
+  "logoStyle": "sharp-square-mark",
   "note": "스크린샷은 프로덕션 앱 실캡처 후 별도 업로드"
 }
