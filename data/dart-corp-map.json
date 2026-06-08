@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T08:22:36.261Z",
-  "count": 3967,
+  "updatedAt": "2026-06-08T07:25:51.540Z",
+  "count": 3968,
   "items": [
     {
       "corpCode": "00260985",
@@ -4328,11 +4328,6 @@
       "stockCode": "002760"
     },
     {
-      "corpCode": "00899459",
-      "corpName": "레이언스",
-      "stockCode": "228850"
-    },
-    {
       "corpCode": "00220561",
       "corpName": "광주신세계",
       "stockCode": "037710"
@@ -7103,11 +7098,6 @@
       "stockCode": "084870"
     },
     {
-      "corpCode": "00425254",
-      "corpName": "나우코스",
-      "stockCode": "257990"
-    },
-    {
       "corpCode": "00664048",
       "corpName": "우리넷",
       "stockCode": "115440"
@@ -8638,11 +8628,6 @@
       "stockCode": "475830"
     },
     {
-      "corpCode": "01307335",
-      "corpName": "공구우먼",
-      "stockCode": "366030"
-    },
-    {
       "corpCode": "00352064",
       "corpName": "프리엠스",
       "stockCode": "053160"
@@ -9028,11 +9013,6 @@
       "stockCode": "032710"
     },
     {
-      "corpCode": "00831428",
-      "corpName": "옵투스제약",
-      "stockCode": "131030"
-    },
-    {
       "corpCode": "01205851",
       "corpName": "HD현대일렉트릭",
       "stockCode": "267260"
@@ -9061,11 +9041,6 @@
       "corpCode": "00317210",
       "corpName": "성호전자",
       "stockCode": "043260"
-    },
-    {
-      "corpCode": "00971090",
-      "corpName": "어스앤에어로스페이스",
-      "stockCode": "263540"
     },
     {
       "corpCode": "00153278",
@@ -10003,11 +9978,6 @@
       "stockCode": "263750"
     },
     {
-      "corpCode": "00303703",
-      "corpName": "CS",
-      "stockCode": "065770"
-    },
-    {
       "corpCode": "01569838",
       "corpName": "유진기업인수목적7호",
       "stockCode": "388800"
@@ -10171,11 +10141,6 @@
       "corpCode": "01686427",
       "corpName": "에스오에스랩",
       "stockCode": "464080"
-    },
-    {
-      "corpCode": "00110750",
-      "corpName": "플루토스",
-      "stockCode": "019570"
     },
     {
       "corpCode": "01412938",
@@ -10363,11 +10328,6 @@
       "stockCode": "001230"
     },
     {
-      "corpCode": "00109268",
-      "corpName": "대동스틸",
-      "stockCode": "048470"
-    },
-    {
       "corpCode": "00135999",
       "corpName": "신라섬유",
       "stockCode": "001000"
@@ -10421,11 +10381,6 @@
       "corpCode": "00958327",
       "corpName": "지앤비에스 에코",
       "stockCode": "382800"
-    },
-    {
-      "corpCode": "01110076",
-      "corpName": "비유테크놀러지",
-      "stockCode": "230980"
     },
     {
       "corpCode": "00156442",
@@ -11563,11 +11518,6 @@
       "stockCode": "452260"
     },
     {
-      "corpCode": "00936787",
-      "corpName": "애경케미칼",
-      "stockCode": "161000"
-    },
-    {
       "corpCode": "00249894",
       "corpName": "테라젠이텍스",
       "stockCode": "066700"
@@ -12118,11 +12068,6 @@
       "stockCode": "456570"
     },
     {
-      "corpCode": "00154426",
-      "corpName": "아이에이치큐",
-      "stockCode": "003560"
-    },
-    {
       "corpCode": "00676122",
       "corpName": "지디",
       "stockCode": "155960"
@@ -12191,11 +12136,6 @@
       "corpCode": "01760738",
       "corpName": "OCI",
       "stockCode": "456040"
-    },
-    {
-      "corpCode": "00362292",
-      "corpName": "씨티씨바이오",
-      "stockCode": "060590"
     },
     {
       "corpCode": "00126089",
@@ -12698,9 +12638,44 @@
       "stockCode": "261780"
     },
     {
+      "corpCode": "00154426",
+      "corpName": "아이에이치큐",
+      "stockCode": "003560"
+    },
+    {
+      "corpCode": "00137207",
+      "corpName": "유니켐",
+      "stockCode": "011330"
+    },
+    {
+      "corpCode": "00109268",
+      "corpName": "대동스틸",
+      "stockCode": "048470"
+    },
+    {
+      "corpCode": "00426086",
+      "corpName": "티케이지휴켐스",
+      "stockCode": "069260"
+    },
+    {
+      "corpCode": "00303703",
+      "corpName": "CS",
+      "stockCode": "065770"
+    },
+    {
+      "corpCode": "00936787",
+      "corpName": "애경케미칼",
+      "stockCode": "161000"
+    },
+    {
       "corpCode": "00336817",
       "corpName": "HLB제약",
       "stockCode": "047920"
+    },
+    {
+      "corpCode": "00899459",
+      "corpName": "레이언스",
+      "stockCode": "228850"
     },
     {
       "corpCode": "00522007",
@@ -12841,6 +12816,26 @@
       "corpCode": "00645089",
       "corpName": "NHN벅스",
       "stockCode": "104200"
+    },
+    {
+      "corpCode": "00915508",
+      "corpName": "알엔투테크놀로지",
+      "stockCode": "148250"
+    },
+    {
+      "corpCode": "01210190",
+      "corpName": "모비릭스",
+      "stockCode": "348030"
+    },
+    {
+      "corpCode": "00238977",
+      "corpName": "에스엠화진",
+      "stockCode": "134780"
+    },
+    {
+      "corpCode": "00983934",
+      "corpName": "아이스크림에듀",
+      "stockCode": "289010"
     },
     {
       "corpCode": "00426068",
@@ -13288,6 +13283,11 @@
       "stockCode": "368030"
     },
     {
+      "corpCode": "00110750",
+      "corpName": "플루토스",
+      "stockCode": "019570"
+    },
+    {
       "corpCode": "01671285",
       "corpName": "쿼드메디슨",
       "stockCode": "464490"
@@ -13421,11 +13421,6 @@
       "corpCode": "00670766",
       "corpName": "엠엑스온",
       "stockCode": "347890"
-    },
-    {
-      "corpCode": "00915508",
-      "corpName": "알엔투테크놀로지",
-      "stockCode": "148250"
     },
     {
       "corpCode": "01407158",
@@ -13623,6 +13618,31 @@
       "stockCode": "183490"
     },
     {
+      "corpCode": "01307335",
+      "corpName": "공구우먼",
+      "stockCode": "366030"
+    },
+    {
+      "corpCode": "00610861",
+      "corpName": "코스텍시스템",
+      "stockCode": "169670"
+    },
+    {
+      "corpCode": "01110076",
+      "corpName": "비유테크놀러지",
+      "stockCode": "230980"
+    },
+    {
+      "corpCode": "01130885",
+      "corpName": "바이오인프라생명과학",
+      "stockCode": "266470"
+    },
+    {
+      "corpCode": "01976418",
+      "corpName": "대신밸런스제20호스팩",
+      "stockCode": "001340"
+    },
+    {
       "corpCode": "00989327",
       "corpName": "엘피케이로보틱스",
       "stockCode": "183350"
@@ -13731,6 +13751,11 @@
       "corpCode": "00799070",
       "corpName": "딥커머스",
       "stockCode": "900110"
+    },
+    {
+      "corpCode": "00971090",
+      "corpName": "어스앤에어로스페이스",
+      "stockCode": "263540"
     },
     {
       "corpCode": "00923826",
@@ -13956,6 +13981,11 @@
       "corpCode": "01082418",
       "corpName": "SAMG엔터",
       "stockCode": "419530"
+    },
+    {
+      "corpCode": "00831428",
+      "corpName": "옵투스제약",
+      "stockCode": "131030"
     },
     {
       "corpCode": "01649204",
@@ -14703,11 +14733,6 @@
       "stockCode": "045660"
     },
     {
-      "corpCode": "00137207",
-      "corpName": "유니켐",
-      "stockCode": "011330"
-    },
-    {
       "corpCode": "00271501",
       "corpName": "코아시아",
       "stockCode": "045970"
@@ -14918,11 +14943,6 @@
       "stockCode": "321820"
     },
     {
-      "corpCode": "01210190",
-      "corpName": "모비릭스",
-      "stockCode": "348030"
-    },
-    {
       "corpCode": "01276901",
       "corpName": "엔피",
       "stockCode": "291230"
@@ -15111,11 +15131,6 @@
       "corpCode": "00523176",
       "corpName": "광동헬스바이오",
       "stockCode": "086220"
-    },
-    {
-      "corpCode": "00124027",
-      "corpName": "부산산업",
-      "stockCode": "011390"
     },
     {
       "corpCode": "00126362",
@@ -15778,11 +15793,6 @@
       "stockCode": "024910"
     },
     {
-      "corpCode": "00426086",
-      "corpName": "티케이지휴켐스",
-      "stockCode": "069260"
-    },
-    {
       "corpCode": "00540605",
       "corpName": "이월드",
       "stockCode": "084680"
@@ -16051,11 +16061,6 @@
       "corpCode": "01814312",
       "corpName": "한국제14호기업인수목적",
       "stockCode": "477530"
-    },
-    {
-      "corpCode": "00610861",
-      "corpName": "코스텍시스템",
-      "stockCode": "169670"
     },
     {
       "corpCode": "00542898",
@@ -16446,11 +16451,6 @@
       "corpCode": "00488244",
       "corpName": "원일티엔아이",
       "stockCode": "136150"
-    },
-    {
-      "corpCode": "01130885",
-      "corpName": "바이오인프라생명과학",
-      "stockCode": "266470"
     },
     {
       "corpCode": "01156795",
@@ -16923,11 +16923,6 @@
       "stockCode": "446540"
     },
     {
-      "corpCode": "00983934",
-      "corpName": "아이스크림에듀",
-      "stockCode": "289010"
-    },
-    {
       "corpCode": "00179489",
       "corpName": "명인제약",
       "stockCode": "317450"
@@ -17246,11 +17241,6 @@
       "corpCode": "00172945",
       "corpName": "동일스틸럭스",
       "stockCode": "023790"
-    },
-    {
-      "corpCode": "00238977",
-      "corpName": "에스엠화진",
-      "stockCode": "134780"
     },
     {
       "corpCode": "00155531",
@@ -17903,11 +17893,6 @@
       "stockCode": "012720"
     },
     {
-      "corpCode": "01099861",
-      "corpName": "에이텍모빌리티",
-      "stockCode": "224110"
-    },
-    {
       "corpCode": "00149646",
       "corpName": "기업은행",
       "stockCode": "024110"
@@ -18206,11 +18191,6 @@
       "corpCode": "01963140",
       "corpName": "신한제18호스팩",
       "stockCode": "001290"
-    },
-    {
-      "corpCode": "00615723",
-      "corpName": "알엔티엑스",
-      "stockCode": "123010"
     },
     {
       "corpCode": "01391033",
@@ -18618,6 +18598,11 @@
       "stockCode": "238500"
     },
     {
+      "corpCode": "01332137",
+      "corpName": "노보믹스",
+      "stockCode": "283100"
+    },
+    {
       "corpCode": "00280688",
       "corpName": "스튜디오에스",
       "stockCode": "046140"
@@ -18978,6 +18963,26 @@
       "stockCode": "334970"
     },
     {
+      "corpCode": "00124027",
+      "corpName": "부산산업",
+      "stockCode": "011390"
+    },
+    {
+      "corpCode": "00362292",
+      "corpName": "씨티씨바이오",
+      "stockCode": "060590"
+    },
+    {
+      "corpCode": "00615723",
+      "corpName": "알엔티엑스",
+      "stockCode": "123010"
+    },
+    {
+      "corpCode": "00425254",
+      "corpName": "나우코스",
+      "stockCode": "257990"
+    },
+    {
       "corpCode": "00982023",
       "corpName": "실리콘투",
       "stockCode": "257720"
@@ -19098,11 +19103,6 @@
       "stockCode": "337930"
     },
     {
-      "corpCode": "01332137",
-      "corpName": "노보믹스",
-      "stockCode": "283100"
-    },
-    {
       "corpCode": "00115384",
       "corpName": "동방아그로",
       "stockCode": "007590"
@@ -19176,6 +19176,11 @@
       "corpCode": "01010110",
       "corpName": "더블유게임즈",
       "stockCode": "192080"
+    },
+    {
+      "corpCode": "01099861",
+      "corpName": "에이텍모빌리티",
+      "stockCode": "224110"
     },
     {
       "corpCode": "00607496",

@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-01T08:22:29.017Z",
+  "updatedAt": "2026-06-08T07:21:52.568Z",
   "source": "data.go.kr",
-  "count": 2733,
+  "count": 2731,
   "items": [
     {
       "code": "900110",
@@ -13556,13 +13556,6 @@
       "chosung": "ㅇㅋㅁㅋㅌ"
     },
     {
-      "code": "230980",
-      "name": "비유테크놀러지",
-      "market": "OTHER",
-      "yahooSymbol": "230980.KS",
-      "chosung": "ㅂㅇㅌㅋㄴㄹㅈ"
-    },
-    {
       "code": "232140",
       "name": "와이씨",
       "market": "OTHER",
@@ -14184,13 +14177,6 @@
       "market": "OTHER",
       "yahooSymbol": "257720.KS",
       "chosung": "ㅅㄹㅋㅌ"
-    },
-    {
-      "code": "257990",
-      "name": "나우코스",
-      "market": "OTHER",
-      "yahooSymbol": "257990.KS",
-      "chosung": "ㄴㅇㅋㅅ"
     },
     {
       "code": "258050",
