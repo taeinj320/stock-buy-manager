@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-08T07:21:52.568Z",
+  "updatedAt": "2026-06-15T08:47:19.934Z",
   "source": "data.go.kr",
-  "count": 2731,
+  "count": 2729,
   "items": [
     {
       "code": "900110",
@@ -695,6 +695,13 @@
       "market": "KOSPI",
       "yahooSymbol": "001790.KS",
       "chosung": "ㄷㅎㅈㄷ"
+    },
+    {
+      "code": "000170",
+      "name": "세미티에스",
+      "market": "OTHER",
+      "yahooSymbol": "000170.KS",
+      "chosung": "ㅅㅁㅌㅇㅅ"
     },
     {
       "code": "001800",
@@ -3012,6 +3019,13 @@
       "market": "KOSPI",
       "yahooSymbol": "011790.KS",
       "chosung": ""
+    },
+    {
+      "code": "001170",
+      "name": "피스피스스튜디오",
+      "market": "OTHER",
+      "yahooSymbol": "001170.KS",
+      "chosung": "ㅍㅅㅍㅅㅅㅌㄷㅇ"
     },
     {
       "code": "011810",
@@ -11477,13 +11491,6 @@
       "chosung": "ㅍㅋㅅㅅㅌㅅ"
     },
     {
-      "code": "140910",
-      "name": "에이리츠",
-      "market": "KOSPI",
-      "yahooSymbol": "140910.KS",
-      "chosung": "ㅇㅇㄹㅊ"
-    },
-    {
       "code": "141000",
       "name": "비아트론",
       "market": "OTHER",
@@ -12665,13 +12672,6 @@
       "market": "OTHER",
       "yahooSymbol": "204020.KS",
       "chosung": "ㄱㄹㅌ"
-    },
-    {
-      "code": "204210",
-      "name": "JK리버스톤리츠",
-      "market": "KOSPI",
-      "yahooSymbol": "204210.KS",
-      "chosung": "ㄹㅂㅅㅌㄹㅊ"
     },
     {
       "code": "204270",
@@ -17924,13 +17924,6 @@
       "chosung": "ㅃㅇ"
     },
     {
-      "code": "451700",
-      "name": "엔에이치스팩29호",
-      "market": "OTHER",
-      "yahooSymbol": "451700.KS",
-      "chosung": "ㅇㅇㅇㅊㅅㅍㅎ"
-    },
-    {
       "code": "451760",
       "name": "컨텍",
       "market": "OTHER",
@@ -18321,13 +18314,6 @@
       "market": "OTHER",
       "yahooSymbol": "464580.KS",
       "chosung": "ㄷㅁ"
-    },
-    {
-      "code": "464680",
-      "name": "KB제27호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "464680.KS",
-      "chosung": "ㅈㅎㅅㅍ"
     },
     {
       "code": "465320",
