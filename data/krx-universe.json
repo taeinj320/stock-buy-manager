@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T08:47:19.934Z",
+  "updatedAt": "2026-06-22T08:47:39.362Z",
   "source": "data.go.kr",
   "count": 2729,
   "items": [
@@ -2021,10 +2021,10 @@
     },
     {
       "code": "006490",
-      "name": "인스코비",
+      "name": "프리티",
       "market": "KOSPI",
       "yahooSymbol": "006490.KS",
-      "chosung": "ㅇㅅㅋㅂ"
+      "chosung": "ㅍㄹㅌ"
     },
     {
       "code": "006570",
@@ -3572,6 +3572,13 @@
       "market": "KOSPI",
       "yahooSymbol": "016590.KS",
       "chosung": "ㅅㄷㅇㅈㅈ"
+    },
+    {
+      "code": "001650",
+      "name": "메리츠제2호스팩",
+      "market": "OTHER",
+      "yahooSymbol": "001650.KS",
+      "chosung": "ㅁㄹㅊㅈㅎㅅㅍ"
     },
     {
       "code": "016600",
@@ -18286,13 +18293,6 @@
       "market": "OTHER",
       "yahooSymbol": "464280.KS",
       "chosung": "ㅌㄷㅇㅅㅍ"
-    },
-    {
-      "code": "464440",
-      "name": "한국제13호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "464440.KS",
-      "chosung": "ㅎㄱㅈㅎㅅㅍ"
     },
     {
       "code": "464490",
