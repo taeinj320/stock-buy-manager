@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T08:47:39.362Z",
+  "updatedAt": "2026-06-29T07:20:32.406Z",
   "source": "data.go.kr",
   "count": 2729,
   "items": [
@@ -3267,10 +3267,10 @@
     },
     {
       "code": "013720",
-      "name": "THE CUBE&",
+      "name": "청보",
       "market": "OTHER",
       "yahooSymbol": "013720.KS",
-      "chosung": ""
+      "chosung": "ㅊㅂ"
     },
     {
       "code": "013810",
@@ -7103,10 +7103,10 @@
     },
     {
       "code": "056190",
-      "name": "에스에프에이",
+      "name": "SFA",
       "market": "OTHER",
       "yahooSymbol": "056190.KS",
-      "chosung": "ㅇㅅㅇㅍㅇㅇ"
+      "chosung": ""
     },
     {
       "code": "056360",
@@ -9441,10 +9441,10 @@
     },
     {
       "code": "091970",
-      "name": "나노캠텍",
+      "name": "LSK아이로봇",
       "market": "OTHER",
       "yahooSymbol": "091970.KS",
-      "chosung": "ㄴㄴㅋㅌ"
+      "chosung": "ㅇㅇㄹㅂ"
     },
     {
       "code": "092040",
@@ -13284,10 +13284,10 @@
     },
     {
       "code": "222080",
-      "name": "씨아이에스",
+      "name": "SFA넥셀",
       "market": "OTHER",
       "yahooSymbol": "222080.KS",
-      "chosung": "ㅆㅇㅇㅇㅅ"
+      "chosung": "ㄴㅅ"
     },
     {
       "code": "222110",
