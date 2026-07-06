@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-29T07:20:32.406Z",
+  "updatedAt": "2026-07-06T06:59:03.679Z",
   "source": "data.go.kr",
-  "count": 2729,
+  "count": 2726,
   "items": [
     {
       "code": "900110",
@@ -2391,13 +2391,6 @@
       "chosung": "ㅅㅎ"
     },
     {
-      "code": "008500",
-      "name": "일정실업",
-      "market": "KOSPI",
-      "yahooSymbol": "008500.KS",
-      "chosung": "ㅇㅈㅅㅇ"
-    },
-    {
       "code": "008600",
       "name": "윌비스",
       "market": "KOSPI",
@@ -3558,6 +3551,13 @@
       "market": "KOSPI",
       "yahooSymbol": "016450.KS",
       "chosung": "ㅎㅅㅇㅅㅎㄷㅅ"
+    },
+    {
+      "code": "001640",
+      "name": "한국제16호스팩",
+      "market": "OTHER",
+      "yahooSymbol": "001640.KS",
+      "chosung": "ㅎㄱㅈㅎㅅㅍ"
     },
     {
       "code": "016580",
@@ -4895,13 +4895,6 @@
       "market": "OTHER",
       "yahooSymbol": "032960.KS",
       "chosung": "ㄷㅇㄱㅇ"
-    },
-    {
-      "code": "032980",
-      "name": "바이온",
-      "market": "OTHER",
-      "yahooSymbol": "032980.KS",
-      "chosung": "ㅂㅇㅇ"
     },
     {
       "code": "033050",
@@ -10105,13 +10098,6 @@
       "chosung": "ㅇㅋㅇㄷㄹ"
     },
     {
-      "code": "101390",
-      "name": "아이엠",
-      "market": "OTHER",
-      "yahooSymbol": "101390.KS",
-      "chosung": "ㅇㅇㅇ"
-    },
-    {
       "code": "101400",
       "name": "엔시트론",
       "market": "OTHER",
@@ -10376,13 +10362,6 @@
       "market": "OTHER",
       "yahooSymbol": "106240.KS",
       "chosung": "ㅍㅇㅌㅋㄴㅅ"
-    },
-    {
-      "code": "106520",
-      "name": "노블엠앤비",
-      "market": "OTHER",
-      "yahooSymbol": "106520.KS",
-      "chosung": "ㄴㅂㅇㅇㅂ"
     },
     {
       "code": "107590",
@@ -11729,6 +11708,13 @@
       "chosung": "ㅇㅌㅍ"
     },
     {
+      "code": "153890",
+      "name": "져스텍",
+      "market": "OTHER",
+      "yahooSymbol": "153890.KS",
+      "chosung": "ㅈㅅㅌ"
+    },
+    {
       "code": "154030",
       "name": "아시아종묘",
       "market": "OTHER",
@@ -12444,10 +12430,10 @@
     },
     {
       "code": "195990",
-      "name": "에이비프로바이오",
+      "name": "루트K",
       "market": "OTHER",
       "yahooSymbol": "195990.KS",
-      "chosung": "ㅇㅇㅂㅍㄹㅂㅇㅇ"
+      "chosung": "ㄹㅌ"
     },
     {
       "code": "196170",
@@ -13465,13 +13451,6 @@
       "chosung": "ㅇㄹㅅ"
     },
     {
-      "code": "227100",
-      "name": "프로브잇",
-      "market": "OTHER",
-      "yahooSymbol": "227100.KS",
-      "chosung": "ㅍㄹㅂㅇ"
-    },
-    {
       "code": "227420",
       "name": "도부",
       "market": "OTHER",
@@ -13554,13 +13533,6 @@
       "market": "OTHER",
       "yahooSymbol": "230240.KS",
       "chosung": "ㅇㅊㅇㅍㅇ"
-    },
-    {
-      "code": "230360",
-      "name": "에코마케팅",
-      "market": "OTHER",
-      "yahooSymbol": "230360.KS",
-      "chosung": "ㅇㅋㅁㅋㅌ"
     },
     {
       "code": "232140",
@@ -15118,10 +15090,10 @@
     },
     {
       "code": "297570",
-      "name": "알로이스",
+      "name": "아틀라스링크",
       "market": "OTHER",
       "yahooSymbol": "297570.KS",
-      "chosung": "ㅇㄹㅇㅅ"
+      "chosung": "ㅇㅌㄹㅅㄹㅋ"
     },
     {
       "code": "297890",
@@ -16119,10 +16091,10 @@
     },
     {
       "code": "340930",
-      "name": "유일에너테크",
+      "name": "성원에너텍",
       "market": "OTHER",
       "yahooSymbol": "340930.KS",
-      "chosung": "ㅇㅇㅇㄴㅌㅋ"
+      "chosung": "ㅅㅇㅇㄴㅌ"
     },
     {
       "code": "341170",
@@ -16637,10 +16609,10 @@
     },
     {
       "code": "366030",
-      "name": "공구우먼",
+      "name": "나인앤컴퍼니",
       "market": "OTHER",
       "yahooSymbol": "366030.KS",
-      "chosung": "ㄱㄱㅇㅁ"
+      "chosung": "ㄴㅇㅇㅋㅍㄴ"
     },
     {
       "code": "367000",
@@ -18517,6 +18489,13 @@
       "market": "OTHER",
       "yahooSymbol": "474930.KS",
       "chosung": "ㅅㅎㅈㅎㅅㅍ"
+    },
+    {
+      "code": "475040",
+      "name": "스트라드비젼",
+      "market": "OTHER",
+      "yahooSymbol": "475040.KS",
+      "chosung": "ㅅㅌㄹㄷㅂㅈ"
     },
     {
       "code": "475150",
