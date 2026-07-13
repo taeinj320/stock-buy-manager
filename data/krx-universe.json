@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-06T06:59:03.679Z",
+  "updatedAt": "2026-07-13T05:57:07.872Z",
   "source": "data.go.kr",
-  "count": 2726,
+  "count": 2725,
   "items": [
     {
       "code": "900110",
@@ -12653,13 +12653,6 @@
       "chosung": "ㄷㄹㅅㅋㄹㅌ"
     },
     {
-      "code": "203690",
-      "name": "아크솔루션스",
-      "market": "OTHER",
-      "yahooSymbol": "203690.KS",
-      "chosung": "ㅇㅋㅅㄹㅅㅅ"
-    },
-    {
       "code": "204020",
       "name": "그리티",
       "market": "OTHER",
@@ -13281,13 +13274,6 @@
       "market": "OTHER",
       "yahooSymbol": "222110.KS",
       "chosung": "ㅍㅈ"
-    },
-    {
-      "code": "222160",
-      "name": "NPX",
-      "market": "OTHER",
-      "yahooSymbol": "222160.KS",
-      "chosung": ""
     },
     {
       "code": "222420",
@@ -16599,6 +16585,13 @@
       "market": "OTHER",
       "yahooSymbol": "365590.KS",
       "chosung": "ㅎㅇㄷ"
+    },
+    {
+      "code": "365660",
+      "name": "레몬헬스케어",
+      "market": "OTHER",
+      "yahooSymbol": "365660.KS",
+      "chosung": "ㄹㅁㅎㅅㅋㅇ"
     },
     {
       "code": "365900",
