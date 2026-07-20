@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-13T06:01:02.874Z",
-  "count": 3976,
+  "updatedAt": "2026-07-20T06:02:18.192Z",
+  "count": 3977,
   "items": [
     {
       "corpCode": "00260985",
@@ -4928,11 +4928,6 @@
       "stockCode": "036190"
     },
     {
-      "corpCode": "00684714",
-      "corpName": "풍산",
-      "stockCode": "103140"
-    },
-    {
       "corpCode": "00126371",
       "corpName": "삼성전기",
       "stockCode": "009150"
@@ -6483,11 +6478,6 @@
       "stockCode": "006800"
     },
     {
-      "corpCode": "01136348",
-      "corpName": "나무기술",
-      "stockCode": "242040"
-    },
-    {
       "corpCode": "00244419",
       "corpName": "디에스티",
       "stockCode": "033430"
@@ -7946,11 +7936,6 @@
       "corpCode": "01148909",
       "corpName": "휴럼",
       "stockCode": "284420"
-    },
-    {
-      "corpCode": "00393469",
-      "corpName": "녹원씨엔아이",
-      "stockCode": "065560"
     },
     {
       "corpCode": "00341916",
@@ -10513,11 +10498,6 @@
       "stockCode": "413390"
     },
     {
-      "corpCode": "00474588",
-      "corpName": "한중엔시에스",
-      "stockCode": "107640"
-    },
-    {
       "corpCode": "01819867",
       "corpName": "미래에셋비전스팩6호",
       "stockCode": "478440"
@@ -11921,11 +11901,6 @@
       "corpCode": "01760738",
       "corpName": "OCI",
       "stockCode": "456040"
-    },
-    {
-      "corpCode": "00126089",
-      "corpName": "DH오토넥스",
-      "stockCode": "000300"
     },
     {
       "corpCode": "01602638",
@@ -14258,11 +14233,6 @@
       "stockCode": "031990"
     },
     {
-      "corpCode": "01573284",
-      "corpName": "코닉오토메이션",
-      "stockCode": "391710"
-    },
-    {
       "corpCode": "00392691",
       "corpName": "포니링크",
       "stockCode": "064800"
@@ -14441,11 +14411,6 @@
       "corpCode": "01194607",
       "corpName": "비츠로넥스텍",
       "stockCode": "488900"
-    },
-    {
-      "corpCode": "00120906",
-      "corpName": "에스아이리소스",
-      "stockCode": "065420"
     },
     {
       "corpCode": "00399694",
@@ -14666,16 +14631,6 @@
       "corpCode": "00842619",
       "corpName": "리가켐바이오",
       "stockCode": "141080"
-    },
-    {
-      "corpCode": "01116502",
-      "corpName": "아티스트컴퍼니",
-      "stockCode": "321820"
-    },
-    {
-      "corpCode": "01276901",
-      "corpName": "엔피",
-      "stockCode": "291230"
     },
     {
       "corpCode": "01381391",
@@ -15068,11 +15023,6 @@
       "stockCode": "457630"
     },
     {
-      "corpCode": "01267222",
-      "corpName": "에피소드컴퍼니",
-      "stockCode": "317530"
-    },
-    {
       "corpCode": "01516890",
       "corpName": "E8",
       "stockCode": "418620"
@@ -15271,11 +15221,6 @@
       "corpCode": "01073261",
       "corpName": "동방메디컬",
       "stockCode": "240550"
-    },
-    {
-      "corpCode": "01359736",
-      "corpName": "프로이천",
-      "stockCode": "321260"
     },
     {
       "corpCode": "00226352",
@@ -16528,11 +16473,6 @@
       "stockCode": "008290"
     },
     {
-      "corpCode": "00172291",
-      "corpName": "더존비즈온",
-      "stockCode": "012510"
-    },
-    {
       "corpCode": "00664853",
       "corpName": "제이씨케미칼",
       "stockCode": "137950"
@@ -17121,11 +17061,6 @@
       "corpCode": "00102858",
       "corpName": "고려아연",
       "stockCode": "010130"
-    },
-    {
-      "corpCode": "00145668",
-      "corpName": "이화공영",
-      "stockCode": "001840"
     },
     {
       "corpCode": "00104999",
@@ -17993,11 +17928,6 @@
       "stockCode": "005440"
     },
     {
-      "corpCode": "00349811",
-      "corpName": "오션인더블유",
-      "stockCode": "052300"
-    },
-    {
       "corpCode": "00187415",
       "corpName": "코미팜",
       "stockCode": "041960"
@@ -18306,11 +18236,6 @@
       "corpCode": "01365825",
       "corpName": "피에스케이",
       "stockCode": "319660"
-    },
-    {
-      "corpCode": "01497142",
-      "corpName": "엠아이큐브솔루션",
-      "stockCode": "373170"
     },
     {
       "corpCode": "01586455",
@@ -19598,6 +19523,86 @@
       "stockCode": "340930"
     },
     {
+      "corpCode": "00126089",
+      "corpName": "DH오토넥스",
+      "stockCode": "000300"
+    },
+    {
+      "corpCode": "01065013",
+      "corpName": "우정바이오",
+      "stockCode": "215380"
+    },
+    {
+      "corpCode": "01501764",
+      "corpName": "레메디",
+      "stockCode": "387690"
+    },
+    {
+      "corpCode": "00684714",
+      "corpName": "풍산",
+      "stockCode": "103140"
+    },
+    {
+      "corpCode": "00145668",
+      "corpName": "이화공영",
+      "stockCode": "001840"
+    },
+    {
+      "corpCode": "00172291",
+      "corpName": "더존비즈온",
+      "stockCode": "012510"
+    },
+    {
+      "corpCode": "01359736",
+      "corpName": "프로이천",
+      "stockCode": "321260"
+    },
+    {
+      "corpCode": "01497142",
+      "corpName": "엠아이큐브솔루션",
+      "stockCode": "373170"
+    },
+    {
+      "corpCode": "00349811",
+      "corpName": "오션인더블유",
+      "stockCode": "052300"
+    },
+    {
+      "corpCode": "01136348",
+      "corpName": "나무기술",
+      "stockCode": "242040"
+    },
+    {
+      "corpCode": "01573284",
+      "corpName": "코닉오토메이션",
+      "stockCode": "391710"
+    },
+    {
+      "corpCode": "00120906",
+      "corpName": "에스아이리소스",
+      "stockCode": "065420"
+    },
+    {
+      "corpCode": "00474588",
+      "corpName": "한중엔시에스",
+      "stockCode": "107640"
+    },
+    {
+      "corpCode": "01116502",
+      "corpName": "아티스트컴퍼니",
+      "stockCode": "321820"
+    },
+    {
+      "corpCode": "01267222",
+      "corpName": "에피소드컴퍼니",
+      "stockCode": "317530"
+    },
+    {
+      "corpCode": "01276901",
+      "corpName": "엔피",
+      "stockCode": "291230"
+    },
+    {
       "corpCode": "01370517",
       "corpName": "스트라드비젼",
       "stockCode": "475040"
@@ -19621,6 +19626,11 @@
       "corpCode": "01424261",
       "corpName": "레몬헬스케어",
       "stockCode": "365660"
+    },
+    {
+      "corpCode": "00393469",
+      "corpName": "녹원씨엔아이",
+      "stockCode": "065560"
     },
     {
       "corpCode": "00111421",
@@ -19876,11 +19886,6 @@
       "corpCode": "00396925",
       "corpName": "엠로",
       "stockCode": "058970"
-    },
-    {
-      "corpCode": "01065013",
-      "corpName": "우정바이오",
-      "stockCode": "215380"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T05:57:07.872Z",
+  "updatedAt": "2026-07-20T05:58:20.712Z",
   "source": "data.go.kr",
   "count": 2725,
   "items": [
@@ -3103,13 +3103,6 @@
       "market": "KOSPI",
       "yahooSymbol": "012450.KS",
       "chosung": "ㅎㅎㅇㅇㄹㅅㅍㅇㅅ"
-    },
-    {
-      "code": "012510",
-      "name": "더존비즈온",
-      "market": "KOSPI",
-      "yahooSymbol": "012510.KS",
-      "chosung": "ㄷㅈㅂㅈㅇ"
     },
     {
       "code": "012610",
@@ -11982,10 +11975,10 @@
     },
     {
       "code": "175140",
-      "name": "휴먼테크놀로지",
+      "name": "아고스",
       "market": "OTHER",
       "yahooSymbol": "175140.KS",
-      "chosung": "ㅎㅁㅌㅋㄴㄹㅈ"
+      "chosung": "ㅇㄱㅅ"
     },
     {
       "code": "175250",
@@ -16970,6 +16963,13 @@
       "market": "OTHER",
       "yahooSymbol": "387570.KS",
       "chosung": "ㅍㅇㅁㄷㅅ"
+    },
+    {
+      "code": "387690",
+      "name": "레메디",
+      "market": "OTHER",
+      "yahooSymbol": "387690.KS",
+      "chosung": "ㄹㅁㄷ"
     },
     {
       "code": "388050",
