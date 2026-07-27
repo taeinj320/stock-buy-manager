@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-20T05:58:20.712Z",
+  "updatedAt": "2026-07-27T06:16:10.062Z",
   "source": "data.go.kr",
-  "count": 2725,
+  "count": 2723,
   "items": [
     {
       "code": "900110",
@@ -3813,10 +3813,10 @@
     },
     {
       "code": "018500",
-      "name": "동원금속",
+      "name": "동원모빌리티",
       "market": "KOSPI",
       "yahooSymbol": "018500.KS",
-      "chosung": "ㄷㅇㄱㅅ"
+      "chosung": "ㄷㅇㅁㅂㄹㅌ"
     },
     {
       "code": "018620",
@@ -4646,10 +4646,10 @@
     },
     {
       "code": "030520",
-      "name": "한글과컴퓨터",
+      "name": "한컴",
       "market": "OTHER",
       "yahooSymbol": "030520.KS",
-      "chosung": "ㅎㄱㄱㅋㅍㅌ"
+      "chosung": "ㅎㅋ"
     },
     {
       "code": "030530",
@@ -7123,13 +7123,6 @@
       "chosung": "ㄴ"
     },
     {
-      "code": "057050",
-      "name": "현대홈쇼핑",
-      "market": "KOSPI",
-      "yahooSymbol": "057050.KS",
-      "chosung": "ㅎㄷㅎㅅㅍ"
-    },
-    {
       "code": "057540",
       "name": "옴니시스템",
       "market": "OTHER",
@@ -7289,13 +7282,6 @@
       "market": "OTHER",
       "yahooSymbol": "060230.KS",
       "chosung": "ㅈㅇㅋㅇㅅㄴㅅ"
-    },
-    {
-      "code": "060240",
-      "name": "스타코링크",
-      "market": "OTHER",
-      "yahooSymbol": "060240.KS",
-      "chosung": "ㅅㅌㅋㄹㅋ"
     },
     {
       "code": "060250",
@@ -13025,10 +13011,10 @@
     },
     {
       "code": "215380",
-      "name": "우정바이오",
+      "name": "콜마바이오텍",
       "market": "OTHER",
       "yahooSymbol": "215380.KS",
-      "chosung": "ㅇㅈㅂㅇㅇ"
+      "chosung": "ㅋㅁㅂㅇㅇㅌ"
     },
     {
       "code": "215480",
