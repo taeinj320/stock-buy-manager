@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T06:19:42.076Z",
-  "count": 3979,
+  "updatedAt": "2026-08-03T06:08:33.520Z",
+  "count": 3981,
   "items": [
     {
       "corpCode": "00260985",
@@ -3878,11 +3878,6 @@
       "stockCode": "019180"
     },
     {
-      "corpCode": "00125488",
-      "corpName": "삼륭물산",
-      "stockCode": "014970"
-    },
-    {
       "corpCode": "00260879",
       "corpName": "카페24",
       "stockCode": "042000"
@@ -5293,11 +5288,6 @@
       "stockCode": "001310"
     },
     {
-      "corpCode": "00261285",
-      "corpName": "한국가스공사",
-      "stockCode": "036460"
-    },
-    {
       "corpCode": "01291317",
       "corpName": "더블유씨피",
       "stockCode": "393890"
@@ -6273,11 +6263,6 @@
       "stockCode": "017860"
     },
     {
-      "corpCode": "01791321",
-      "corpName": "하나30호스팩",
-      "stockCode": "469880"
-    },
-    {
       "corpCode": "01528530",
       "corpName": "삼성기업인수목적4호",
       "stockCode": "377630"
@@ -7168,11 +7153,6 @@
       "stockCode": "343510"
     },
     {
-      "corpCode": "00531865",
-      "corpName": "유니테크노",
-      "stockCode": "241690"
-    },
-    {
       "corpCode": "00122694",
       "corpName": "범양건영",
       "stockCode": "002410"
@@ -8031,11 +8011,6 @@
       "corpCode": "01284751",
       "corpName": "시지트로닉스",
       "stockCode": "429270"
-    },
-    {
-      "corpCode": "01785700",
-      "corpName": "IBKS제23호스팩",
-      "stockCode": "467930"
     },
     {
       "corpCode": "01672114",
@@ -10858,11 +10833,6 @@
       "stockCode": "353190"
     },
     {
-      "corpCode": "01491607",
-      "corpName": "오에스피",
-      "stockCode": "368970"
-    },
-    {
       "corpCode": "00101549",
       "corpName": "경동제약",
       "stockCode": "011040"
@@ -11833,11 +11803,6 @@
       "stockCode": "008930"
     },
     {
-      "corpCode": "01042429",
-      "corpName": "넥써쓰",
-      "stockCode": "205500"
-    },
-    {
       "corpCode": "01068658",
       "corpName": "선샤인푸드",
       "stockCode": "217620"
@@ -12793,11 +12758,6 @@
       "stockCode": "027050"
     },
     {
-      "corpCode": "00793155",
-      "corpName": "핸디소프트",
-      "stockCode": "220180"
-    },
-    {
       "corpCode": "00145738",
       "corpName": "이화전기공업",
       "stockCode": "024810"
@@ -13001,11 +12961,6 @@
       "corpCode": "01467336",
       "corpName": "창대정밀",
       "stockCode": "368030"
-    },
-    {
-      "corpCode": "00110750",
-      "corpName": "플루토스",
-      "stockCode": "019570"
     },
     {
       "corpCode": "01671285",
@@ -14528,11 +14483,6 @@
       "stockCode": "067370"
     },
     {
-      "corpCode": "01315042",
-      "corpName": "시선AI",
-      "stockCode": "340810"
-    },
-    {
       "corpCode": "00541437",
       "corpName": "코렌텍",
       "stockCode": "104540"
@@ -15218,11 +15168,6 @@
       "stockCode": "060570"
     },
     {
-      "corpCode": "00595182",
-      "corpName": "아톤",
-      "stockCode": "158430"
-    },
-    {
       "corpCode": "01114586",
       "corpName": "셀레믹스",
       "stockCode": "331920"
@@ -15331,11 +15276,6 @@
       "corpCode": "00260745",
       "corpName": "서울평가정보",
       "stockCode": "036120"
-    },
-    {
-      "corpCode": "01230255",
-      "corpName": "한울앤제주",
-      "stockCode": "276730"
     },
     {
       "corpCode": "00299358",
@@ -15921,11 +15861,6 @@
       "corpCode": "01042711",
       "corpName": "글로벌텍스프리",
       "stockCode": "204620"
-    },
-    {
-      "corpCode": "00269241",
-      "corpName": "주연테크",
-      "stockCode": "044380"
     },
     {
       "corpCode": "01782183",
@@ -18253,11 +18188,6 @@
       "stockCode": "010170"
     },
     {
-      "corpCode": "00605522",
-      "corpName": "소룩스",
-      "stockCode": "290690"
-    },
-    {
       "corpCode": "00145437",
       "corpName": "아센디오",
       "stockCode": "012170"
@@ -19418,9 +19348,34 @@
       "stockCode": "340930"
     },
     {
-      "corpCode": "00126089",
-      "corpName": "DH오토넥스",
-      "stockCode": "000300"
+      "corpCode": "01042429",
+      "corpName": "넥써쓰",
+      "stockCode": "205500"
+    },
+    {
+      "corpCode": "01924673",
+      "corpName": "나노솔루션",
+      "stockCode": "238540"
+    },
+    {
+      "corpCode": "01136348",
+      "corpName": "나무에이엑스",
+      "stockCode": "242040"
+    },
+    {
+      "corpCode": "01230255",
+      "corpName": "한울앤제주",
+      "stockCode": "276730"
+    },
+    {
+      "corpCode": "01491607",
+      "corpName": "오에스피",
+      "stockCode": "368970"
+    },
+    {
+      "corpCode": "00531865",
+      "corpName": "유니테크노",
+      "stockCode": "241690"
     },
     {
       "corpCode": "01501764",
@@ -19453,14 +19408,29 @@
       "stockCode": "373170"
     },
     {
+      "corpCode": "00110750",
+      "corpName": "GMI벤처",
+      "stockCode": "019570"
+    },
+    {
+      "corpCode": "00125488",
+      "corpName": "삼륭물산",
+      "stockCode": "014970"
+    },
+    {
+      "corpCode": "00793155",
+      "corpName": "폴라리스AI핸디",
+      "stockCode": "220180"
+    },
+    {
+      "corpCode": "01791321",
+      "corpName": "하나30호기업인수목적",
+      "stockCode": "469880"
+    },
+    {
       "corpCode": "00349811",
       "corpName": "오션인더블유",
       "stockCode": "052300"
-    },
-    {
-      "corpCode": "01136348",
-      "corpName": "나무기술",
-      "stockCode": "242040"
     },
     {
       "corpCode": "01573284",
@@ -19808,6 +19778,21 @@
       "stockCode": "042500"
     },
     {
+      "corpCode": "00126089",
+      "corpName": "DH오토넥스",
+      "stockCode": "000300"
+    },
+    {
+      "corpCode": "01315042",
+      "corpName": "시선AI",
+      "stockCode": "340810"
+    },
+    {
+      "corpCode": "00261285",
+      "corpName": "한국가스공사",
+      "stockCode": "036460"
+    },
+    {
       "corpCode": "00103662",
       "corpName": "광명전기",
       "stockCode": "017040"
@@ -19861,6 +19846,31 @@
       "corpCode": "00125725",
       "corpName": "디모아",
       "stockCode": "016670"
+    },
+    {
+      "corpCode": "00269241",
+      "corpName": "주연테크",
+      "stockCode": "044380"
+    },
+    {
+      "corpCode": "00595182",
+      "corpName": "아톤",
+      "stockCode": "158430"
+    },
+    {
+      "corpCode": "00605522",
+      "corpName": "아리바이오홀딩스",
+      "stockCode": "290690"
+    },
+    {
+      "corpCode": "02038566",
+      "corpName": "네오뷰",
+      "stockCode": "002180"
+    },
+    {
+      "corpCode": "01785700",
+      "corpName": "아이비케이에스제23호기업인수목적",
+      "stockCode": "467930"
     },
     {
       "corpCode": "00106641",

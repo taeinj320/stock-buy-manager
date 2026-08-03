@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-27T06:16:10.062Z",
+  "updatedAt": "2026-08-03T06:08:25.640Z",
   "source": "data.go.kr",
   "count": 2723,
   "items": [
@@ -3904,10 +3904,10 @@
     },
     {
       "code": "019570",
-      "name": "플루토스",
+      "name": "GMI벤처",
       "market": "OTHER",
       "yahooSymbol": "019570.KS",
-      "chosung": "ㅍㄹㅌㅅ"
+      "chosung": "ㅂㅊ"
     },
     {
       "code": "019660",
@@ -4048,6 +4048,13 @@
       "market": "OTHER",
       "yahooSymbol": "021880.KS",
       "chosung": "ㅁㅇㅅㅋㅍㅌ"
+    },
+    {
+      "code": "002180",
+      "name": "네오뷰",
+      "market": "OTHER",
+      "yahooSymbol": "002180.KS",
+      "chosung": "ㄴㅇㅂ"
     },
     {
       "code": "022100",
@@ -13200,10 +13207,10 @@
     },
     {
       "code": "220180",
-      "name": "핸디소프트",
+      "name": "폴라리스AI핸디",
       "market": "OTHER",
       "yahooSymbol": "220180.KS",
-      "chosung": "ㅎㄷㅅㅍㅌ"
+      "chosung": "ㅍㄹㄹㅅㅎㄷ"
     },
     {
       "code": "220260",
@@ -13696,6 +13703,13 @@
       "chosung": "ㅅㄹㅁㅅ"
     },
     {
+      "code": "238540",
+      "name": "나노솔루션",
+      "market": "OTHER",
+      "yahooSymbol": "238540.KS",
+      "chosung": "ㄴㄴㅅㄹㅅ"
+    },
+    {
       "code": "239340",
       "name": "이스트에이드",
       "market": "OTHER",
@@ -13802,10 +13816,10 @@
     },
     {
       "code": "242040",
-      "name": "나무기술",
+      "name": "나무에이엑스",
       "market": "OTHER",
       "yahooSymbol": "242040.KS",
-      "chosung": "ㄴㅁㄱㅅ"
+      "chosung": "ㄴㅁㅇㅇㅇㅅ"
     },
     {
       "code": "243070",
@@ -14908,10 +14922,10 @@
     },
     {
       "code": "290690",
-      "name": "소룩스",
+      "name": "아리바이오홀딩스",
       "market": "OTHER",
       "yahooSymbol": "290690.KS",
-      "chosung": "ㅅㄹㅅ"
+      "chosung": "ㅇㄹㅂㅇㅇㅎㄷㅅ"
     },
     {
       "code": "290720",
@@ -18309,13 +18323,6 @@
       "chosung": "ㅋㅇㅎㅇㄹㅈㅎㅅㅍ"
     },
     {
-      "code": "467930",
-      "name": "IBKS제23호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "467930.KS",
-      "chosung": "ㅈㅎㅅㅍ"
-    },
-    {
       "code": "468530",
       "name": "프로티나",
       "market": "OTHER",
@@ -18349,13 +18356,6 @@
       "market": "OTHER",
       "yahooSymbol": "469750.KS",
       "chosung": "ㅇㅇㅂㅈㅇㅅ"
-    },
-    {
-      "code": "469880",
-      "name": "하나30호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "469880.KS",
-      "chosung": "ㅎㄴㅎㅅㅍ"
     },
     {
       "code": "469900",
