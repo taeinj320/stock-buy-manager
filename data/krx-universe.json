@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T04:20:37.818Z",
+  "updatedAt": "2026-08-17T03:39:00.837Z",
   "source": "data.go.kr",
   "count": 2723,
   "items": [
@@ -4715,13 +4715,6 @@
       "chosung": "ㅅㅅㄱㅇㅌㄴㅅㄴ"
     },
     {
-      "code": "031440",
-      "name": "신세계푸드",
-      "market": "KOSPI",
-      "yahooSymbol": "031440.KS",
-      "chosung": "ㅅㅅㄱㅍㄷ"
-    },
-    {
       "code": "031510",
       "name": "오스템",
       "market": "OTHER",
@@ -6008,13 +6001,6 @@
       "market": "OTHER",
       "yahooSymbol": "042940.KS",
       "chosung": "ㅅㅈㄱㅅ"
-    },
-    {
-      "code": "043090",
-      "name": "더테크놀로지",
-      "market": "OTHER",
-      "yahooSymbol": "043090.KS",
-      "chosung": "ㄷㅌㅋㄴㄹㅈ"
     },
     {
       "code": "043100",
@@ -14943,17 +14929,17 @@
     },
     {
       "code": "291230",
-      "name": "엔피",
+      "name": "컴투스엔",
       "market": "OTHER",
       "yahooSymbol": "291230.KS",
-      "chosung": "ㅇㅍ"
+      "chosung": "ㅋㅌㅅㅇ"
     },
     {
       "code": "291650",
-      "name": "압타머사이언스",
+      "name": "츌립앤사이언스",
       "market": "OTHER",
       "yahooSymbol": "291650.KS",
-      "chosung": "ㅇㅌㅁㅅㅇㅇㅅ"
+      "chosung": "ㅊㄹㅇㅅㅇㅇㅅ"
     },
     {
       "code": "291810",
@@ -18736,6 +18722,13 @@
       "chosung": "ㄷㅅㅂㄹㅅㅈㅎㄱㅇㅇㅅㅁㅈ"
     },
     {
+      "code": "483350",
+      "name": "딜리셔스",
+      "market": "OTHER",
+      "yahooSymbol": "483350.KS",
+      "chosung": "ㄷㄹㅅㅅ"
+    },
+    {
       "code": "483650",
       "name": "달바글로벌",
       "market": "KOSPI",
@@ -18797,6 +18790,13 @@
       "market": "OTHER",
       "yahooSymbol": "487360.KS",
       "chosung": "ㅅㅎㅈㅎㅅㅍ"
+    },
+    {
+      "code": "487400",
+      "name": "케이앤에스아이앤씨",
+      "market": "OTHER",
+      "yahooSymbol": "487400.KS",
+      "chosung": "ㅋㅇㅇㅇㅅㅇㅇㅇㅆ"
     },
     {
       "code": "487570",
