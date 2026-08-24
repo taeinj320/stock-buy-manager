@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-17T03:39:00.837Z",
+  "updatedAt": "2026-08-24T03:43:06.764Z",
   "source": "data.go.kr",
-  "count": 2723,
+  "count": 2724,
   "items": [
     {
       "code": "900110",
@@ -10862,10 +10862,10 @@
     },
     {
       "code": "123010",
-      "name": "알엔티엑스",
+      "name": "MSDI",
       "market": "OTHER",
       "yahooSymbol": "123010.KS",
-      "chosung": "ㅇㅇㅌㅇㅅ"
+      "chosung": ""
     },
     {
       "code": "123040",
@@ -14711,6 +14711,13 @@
       "chosung": "ㄹㅌㅇ"
     },
     {
+      "code": "282620",
+      "name": "기도산업",
+      "market": "OTHER",
+      "yahooSymbol": "282620.KS",
+      "chosung": "ㄱㄷㅅㅇ"
+    },
+    {
       "code": "282720",
       "name": "금양그린파워",
       "market": "OTHER",
@@ -15157,13 +15164,6 @@
       "market": "OTHER",
       "yahooSymbol": "299660.KS",
       "chosung": "ㅅㄹㄷ"
-    },
-    {
-      "code": "299900",
-      "name": "위지윅스튜디오",
-      "market": "OTHER",
-      "yahooSymbol": "299900.KS",
-      "chosung": "ㅇㅈㅇㅅㅌㄷㅇ"
     },
     {
       "code": "300080",
@@ -19035,6 +19035,13 @@
       "market": "OTHER",
       "yahooSymbol": "950200.KS",
       "chosung": "ㅅㅁㅈ"
+    },
+    {
+      "code": "950260",
+      "name": "인제니아테라퓨틱스",
+      "market": "OTHER",
+      "yahooSymbol": "950260.KS",
+      "chosung": "ㅇㅈㄴㅇㅌㄹㅍㅌㅅ"
     },
     {
       "code": "900120",
