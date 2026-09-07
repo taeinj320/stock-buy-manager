@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-24T03:43:06.764Z",
+  "updatedAt": "2026-09-07T07:37:44.903Z",
   "source": "data.go.kr",
-  "count": 2724,
+  "count": 2721,
   "items": [
     {
       "code": "900110",
@@ -880,10 +880,10 @@
     },
     {
       "code": "002420",
-      "name": "세기상사",
+      "name": "우양피앤엘",
       "market": "KOSPI",
       "yahooSymbol": "002420.KS",
-      "chosung": "ㅅㄱㅅㅅ"
+      "chosung": "ㅇㅇㅍㅇㅇ"
     },
     {
       "code": "002450",
@@ -2651,10 +2651,10 @@
     },
     {
       "code": "009810",
-      "name": "플레이그램",
+      "name": "MDS스피어",
       "market": "KOSPI",
       "yahooSymbol": "009810.KS",
-      "chosung": "ㅍㄹㅇㄱㄹ"
+      "chosung": "ㅅㅍㅇ"
     },
     {
       "code": "009830",
@@ -8726,13 +8726,6 @@
       "chosung": "ㅈㅂㅅ"
     },
     {
-      "code": "082640",
-      "name": "동양생명",
-      "market": "KOSPI",
-      "yahooSymbol": "082640.KS",
-      "chosung": "ㄷㅇㅅㅁ"
-    },
-    {
       "code": "082660",
       "name": "코스나인",
       "market": "OTHER",
@@ -9767,13 +9760,6 @@
       "market": "OTHER",
       "yahooSymbol": "096530.KS",
       "chosung": "ㅆㅈ"
-    },
-    {
-      "code": "096610",
-      "name": "알에프세미",
-      "market": "OTHER",
-      "yahooSymbol": "096610.KS",
-      "chosung": "ㅇㅇㅍㅅㅁ"
     },
     {
       "code": "096630",
@@ -14452,13 +14438,6 @@
       "chosung": "ㅁㅇㅇㅅㅆ"
     },
     {
-      "code": "269620",
-      "name": "시스웍",
-      "market": "OTHER",
-      "yahooSymbol": "269620.KS",
-      "chosung": "ㅅㅅㅇ"
-    },
-    {
       "code": "270210",
       "name": "에스알바이오텍",
       "market": "OTHER",
@@ -15761,13 +15740,6 @@
       "chosung": "ㅁㅌㄹㅇㅈ"
     },
     {
-      "code": "327610",
-      "name": "펨토바이오메드",
-      "market": "OTHER",
-      "yahooSymbol": "327610.KS",
-      "chosung": "ㅍㅌㅂㅇㅇㅁㄷ"
-    },
-    {
       "code": "328130",
       "name": "루닛",
       "market": "OTHER",
@@ -16944,6 +16916,13 @@
       "chosung": "ㅋㅇㄹㅇㅅㅍㅌ"
     },
     {
+      "code": "386380",
+      "name": "스카이랩스",
+      "market": "OTHER",
+      "yahooSymbol": "386380.KS",
+      "chosung": "ㅅㅋㅇㄹㅅ"
+    },
+    {
       "code": "387570",
       "name": "파인메딕스",
       "market": "OTHER",
@@ -17127,10 +17106,10 @@
     },
     {
       "code": "396300",
-      "name": "세아메카닉스",
+      "name": "HT로보틱스",
       "market": "OTHER",
       "yahooSymbol": "396300.KS",
-      "chosung": "ㅅㅇㅁㅋㄴㅅ"
+      "chosung": "ㄹㅂㅌㅅ"
     },
     {
       "code": "396470",
@@ -17390,6 +17369,13 @@
       "market": "OTHER",
       "yahooSymbol": "417010.KS",
       "chosung": "ㄴㄴㅌ"
+    },
+    {
+      "code": "417030",
+      "name": "니어스랩",
+      "market": "OTHER",
+      "yahooSymbol": "417030.KS",
+      "chosung": "ㄴㅇㅅㄹ"
     },
     {
       "code": "417180",
@@ -18349,13 +18335,6 @@
       "market": "OTHER",
       "yahooSymbol": "469900.KS",
       "chosung": "ㅎㄴㅎㅅㅍ"
-    },
-    {
-      "code": "471050",
-      "name": "대신밸런스제17호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "471050.KS",
-      "chosung": "ㄷㅅㅂㄹㅅㅈㅎㅅㅍ"
     },
     {
       "code": "471820",
