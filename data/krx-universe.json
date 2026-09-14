@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T07:37:44.903Z",
+  "updatedAt": "2026-09-14T08:12:21.568Z",
   "source": "data.go.kr",
   "count": 2721,
   "items": [
@@ -3931,6 +3931,13 @@
       "chosung": "ㅅㅇㅌㅁㅌ"
     },
     {
+      "code": "001970",
+      "name": "엔에이치스팩34호",
+      "market": "OTHER",
+      "yahooSymbol": "001970.KS",
+      "chosung": "ㅇㅇㅇㅊㅅㅍㅎ"
+    },
+    {
       "code": "019990",
       "name": "에너토크",
       "market": "OTHER",
@@ -5549,10 +5556,10 @@
     },
     {
       "code": "038060",
-      "name": "루멘스",
+      "name": "루멘스바이오스",
       "market": "OTHER",
       "yahooSymbol": "038060.KS",
-      "chosung": "ㄹㅁㅅ"
+      "chosung": "ㄹㅁㅅㅂㅇㅇㅅ"
     },
     {
       "code": "038070",
@@ -13788,10 +13795,10 @@
     },
     {
       "code": "242040",
-      "name": "나무에이엑스",
+      "name": "나무AX",
       "market": "OTHER",
       "yahooSymbol": "242040.KS",
-      "chosung": "ㄴㅁㅇㅇㅇㅅ"
+      "chosung": "ㄴㅁ"
     },
     {
       "code": "243070",
@@ -18342,13 +18349,6 @@
       "market": "OTHER",
       "yahooSymbol": "471820.KS",
       "chosung": "ㅅㄹㅁㅅㅅㅇㅇㅅ"
-    },
-    {
-      "code": "472220",
-      "name": "신영스팩10호",
-      "market": "OTHER",
-      "yahooSymbol": "472220.KS",
-      "chosung": "ㅅㅇㅅㅍㅎ"
     },
     {
       "code": "472230",
