@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-14T08:12:21.568Z",
+  "updatedAt": "2026-09-21T08:18:04.927Z",
   "source": "data.go.kr",
-  "count": 2721,
+  "count": 2717,
   "items": [
     {
       "code": "900110",
@@ -2006,13 +2006,6 @@
       "chosung": "ㄷㄱㅂㅎㅈ"
     },
     {
-      "code": "006380",
-      "name": "카프로",
-      "market": "KOSPI",
-      "yahooSymbol": "006380.KS",
-      "chosung": "ㅋㅍㄹ"
-    },
-    {
       "code": "006400",
       "name": "삼성SDI",
       "market": "KOSPI",
@@ -2455,10 +2448,10 @@
     },
     {
       "code": "009140",
-      "name": "경인전자",
+      "name": "케이아이이",
       "market": "KOSPI",
       "yahooSymbol": "009140.KS",
-      "chosung": "ㄱㅇㅈㅈ"
+      "chosung": "ㅋㅇㅇㅇㅇ"
     },
     {
       "code": "009150",
@@ -10777,13 +10770,6 @@
       "chosung": "ㅂㄷㅌ"
     },
     {
-      "code": "121850",
-      "name": "코이즈",
-      "market": "OTHER",
-      "yahooSymbol": "121850.KS",
-      "chosung": "ㅋㅇㅈ"
-    },
-    {
       "code": "121890",
       "name": "에스디시스템",
       "market": "OTHER",
@@ -14648,13 +14634,6 @@
       "chosung": ""
     },
     {
-      "code": "279060",
-      "name": "이노벡스",
-      "market": "OTHER",
-      "yahooSymbol": "279060.KS",
-      "chosung": "ㅇㄴㅂㅅ"
-    },
-    {
       "code": "279570",
       "name": "케이뱅크",
       "market": "KOSPI",
@@ -14712,10 +14691,10 @@
     },
     {
       "code": "282880",
-      "name": "코윈테크",
+      "name": "코윈로보틱스",
       "market": "OTHER",
       "yahooSymbol": "282880.KS",
-      "chosung": "ㅋㅇㅌㅋ"
+      "chosung": "ㅋㅇㄹㅂㅌㅅ"
     },
     {
       "code": "284620",
@@ -18258,13 +18237,6 @@
       "market": "OTHER",
       "yahooSymbol": "464580.KS",
       "chosung": "ㄷㅁ"
-    },
-    {
-      "code": "465320",
-      "name": "교보15호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "465320.KS",
-      "chosung": "ㄱㅂㅎㅅㅍ"
     },
     {
       "code": "465480",
