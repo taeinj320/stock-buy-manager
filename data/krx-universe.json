@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-21T08:18:04.927Z",
+  "updatedAt": "2026-10-12T09:55:37.252Z",
   "source": "data.go.kr",
-  "count": 2717,
+  "count": 2719,
   "items": [
     {
       "code": "900110",
@@ -1250,6 +1250,13 @@
       "chosung": "ㄱㄹㅂ"
     },
     {
+      "code": "000350",
+      "name": "빅웨이브로보틱스",
+      "market": "OTHER",
+      "yahooSymbol": "000350.KS",
+      "chosung": "ㅂㅇㅇㅂㄹㅂㅌㅅ"
+    },
+    {
       "code": "003610",
       "name": "방림",
       "market": "KOSPI",
@@ -2333,13 +2340,6 @@
       "market": "KOSPI",
       "yahooSymbol": "008260.KS",
       "chosung": "ㅅㅌ"
-    },
-    {
-      "code": "008290",
-      "name": "원풍물산",
-      "market": "OTHER",
-      "yahooSymbol": "008290.KS",
-      "chosung": "ㅇㅍㅁㅅ"
     },
     {
       "code": "000820",
@@ -3511,6 +3511,13 @@
       "chosung": "ㄹㄷㅅㅋㅅㅁㅌ"
     },
     {
+      "code": "001610",
+      "name": "네오사피엔스",
+      "market": "OTHER",
+      "yahooSymbol": "001610.KS",
+      "chosung": "ㄴㅇㅅㅍㅇㅅ"
+    },
+    {
       "code": "016250",
       "name": "SGC E&C",
       "market": "OTHER",
@@ -3945,6 +3952,13 @@
       "chosung": "ㅎㅅ"
     },
     {
+      "code": "002000",
+      "name": "한국제17호스팩",
+      "market": "OTHER",
+      "yahooSymbol": "002000.KS",
+      "chosung": "ㅎㄱㅈㅎㅅㅍ"
+    },
+    {
       "code": "020120",
       "name": "키다리스튜디오",
       "market": "KOSPI",
@@ -3992,6 +4006,13 @@
       "market": "KOSPI",
       "yahooSymbol": "020760.KS",
       "chosung": "ㅇㅈㄷㅅㅍ"
+    },
+    {
+      "code": "002090",
+      "name": "케이비제34호스팩",
+      "market": "OTHER",
+      "yahooSymbol": "002090.KS",
+      "chosung": "ㅋㅇㅂㅈㅎㅅㅍ"
     },
     {
       "code": "021040",
@@ -6227,13 +6248,6 @@
       "chosung": "ㅋㅇㅅㅇ"
     },
     {
-      "code": "046070",
-      "name": "코다코",
-      "market": "OTHER",
-      "yahooSymbol": "046070.KS",
-      "chosung": "ㅋㄷㅋ"
-    },
-    {
       "code": "046120",
       "name": "오르비텍",
       "market": "OTHER",
@@ -8426,10 +8440,10 @@
     },
     {
       "code": "078130",
-      "name": "국일제지",
+      "name": "에스엠국일",
       "market": "OTHER",
       "yahooSymbol": "078130.KS",
-      "chosung": "ㄱㅇㅈㅈ"
+      "chosung": "ㅇㅅㅇㄱㅇ"
     },
     {
       "code": "078140",
@@ -8726,13 +8740,6 @@
       "chosung": "ㅈㅂㅅ"
     },
     {
-      "code": "082660",
-      "name": "코스나인",
-      "market": "OTHER",
-      "yahooSymbol": "082660.KS",
-      "chosung": "ㅋㅅㄴㅇ"
-    },
-    {
       "code": "082740",
       "name": "한화엔진",
       "market": "KOSPI",
@@ -8850,13 +8857,6 @@
       "market": "OTHER",
       "yahooSymbol": "084110.KS",
       "chosung": "ㅎㅇㅅㄱㄹㅂ"
-    },
-    {
-      "code": "084180",
-      "name": "수성웹툰",
-      "market": "OTHER",
-      "yahooSymbol": "084180.KS",
-      "chosung": "ㅅㅅㅇㅌ"
     },
     {
       "code": "084370",
@@ -11212,10 +11212,10 @@
     },
     {
       "code": "134580",
-      "name": "탑코미디어",
+      "name": "엔키AX",
       "market": "OTHER",
       "yahooSymbol": "134580.KS",
-      "chosung": "ㅌㅋㅁㄷㅇ"
+      "chosung": "ㅇㅋ"
     },
     {
       "code": "134790",
@@ -12408,13 +12408,6 @@
       "chosung": "ㅋㅇㅅㅇㅆㅇ"
     },
     {
-      "code": "196490",
-      "name": "디에이테크놀로지",
-      "market": "OTHER",
-      "yahooSymbol": "196490.KS",
-      "chosung": "ㄷㅇㅇㅌㅋㄴㄹㅈ"
-    },
-    {
       "code": "196700",
       "name": "웹스",
       "market": "OTHER",
@@ -12787,10 +12780,10 @@
     },
     {
       "code": "210120",
-      "name": "캔버스엔",
+      "name": "빅텐츠",
       "market": "OTHER",
       "yahooSymbol": "210120.KS",
-      "chosung": "ㅋㅂㅅㅇ"
+      "chosung": "ㅂㅌㅊ"
     },
     {
       "code": "210540",
@@ -14359,6 +14352,13 @@
       "market": "OTHER",
       "yahooSymbol": "266470.KS",
       "chosung": "ㅂㅇㅇㅇㅍㄹㅅㅁㄱㅎ"
+    },
+    {
+      "code": "266690",
+      "name": "덕산넵코어스",
+      "market": "OTHER",
+      "yahooSymbol": "266690.KS",
+      "chosung": "ㄷㅅㄴㅋㅇㅅ"
     },
     {
       "code": "267080",
@@ -16826,10 +16826,10 @@
     },
     {
       "code": "381970",
-      "name": "케이카",
+      "name": "KG모빌리티플랫폼",
       "market": "KOSPI",
       "yahooSymbol": "381970.KS",
-      "chosung": "ㅋㅇㅋ"
+      "chosung": "ㅁㅂㄹㅌㅍㄹㅍ"
     },
     {
       "code": "382150",
@@ -18281,6 +18281,13 @@
       "chosung": "ㅍㄹㅌㄴ"
     },
     {
+      "code": "468670",
+      "name": "브릴스",
+      "market": "OTHER",
+      "yahooSymbol": "468670.KS",
+      "chosung": "ㅂㄹㅅ"
+    },
+    {
       "code": "468760",
       "name": "유진스팩10호",
       "market": "OTHER",
@@ -18720,6 +18727,13 @@
       "market": "KOSPI",
       "yahooSymbol": "484870.KS",
       "chosung": "ㅇㅇㅆㅅㄹㅅ"
+    },
+    {
+      "code": "486510",
+      "name": "글로벌테크놀로지",
+      "market": "OTHER",
+      "yahooSymbol": "486510.KS",
+      "chosung": "ㄱㄹㅂㅌㅋㄴㄹㅈ"
     },
     {
       "code": "486630",
