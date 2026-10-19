@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-12T09:55:37.252Z",
+  "updatedAt": "2026-10-19T08:12:19.380Z",
   "source": "data.go.kr",
-  "count": 2719,
+  "count": 2714,
   "items": [
     {
       "code": "900110",
@@ -264,10 +264,10 @@
     },
     {
       "code": "000640",
-      "name": "동아쏘시오홀딩스",
+      "name": "동아제약",
       "market": "KOSPI",
       "yahooSymbol": "000640.KS",
-      "chosung": "ㄷㅇㅆㅅㅇㅎㄷㅅ"
+      "chosung": "ㄷㅇㅈㅇ"
     },
     {
       "code": "000650",
@@ -425,10 +425,10 @@
     },
     {
       "code": "001080",
-      "name": "만호제강",
+      "name": "MH머트리얼즈",
       "market": "KOSPI",
       "yahooSymbol": "001080.KS",
-      "chosung": "ㅁㅎㅈㄱ"
+      "chosung": "ㅁㅌㄹㅇㅈ"
     },
     {
       "code": "001120",
@@ -1649,13 +1649,6 @@
       "chosung": "ㅎㅅㅌ"
     },
     {
-      "code": "005030",
-      "name": "부산주공",
-      "market": "KOSPI",
-      "yahooSymbol": "005030.KS",
-      "chosung": "ㅂㅅㅈㄱ"
-    },
-    {
       "code": "005070",
       "name": "코스모신소재",
       "market": "KOSPI",
@@ -1668,13 +1661,6 @@
       "market": "KOSPI",
       "yahooSymbol": "005090.KS",
       "chosung": "ㅇㄴㅈ"
-    },
-    {
-      "code": "005110",
-      "name": "한창",
-      "market": "KOSPI",
-      "yahooSymbol": "005110.KS",
-      "chosung": "ㅎㅊ"
     },
     {
       "code": "005160",
@@ -9357,10 +9343,10 @@
     },
     {
       "code": "091340",
-      "name": "S&K폴리텍",
+      "name": "S&K글로벌",
       "market": "OTHER",
       "yahooSymbol": "091340.KS",
-      "chosung": "ㅍㄹㅌ"
+      "chosung": "ㄱㄹㅂ"
     },
     {
       "code": "091440",
@@ -12035,6 +12021,13 @@
       "market": "OTHER",
       "yahooSymbol": "179720.KS",
       "chosung": "ㅁㄴㅁㅂ"
+    },
+    {
+      "code": "179880",
+      "name": "멜콘",
+      "market": "OTHER",
+      "yahooSymbol": "179880.KS",
+      "chosung": "ㅁㅋ"
     },
     {
       "code": "179900",
@@ -16020,13 +16013,6 @@
       "chosung": "ㅅㅇㅇㄴㅌ"
     },
     {
-      "code": "341170",
-      "name": "퓨쳐메디신",
-      "market": "OTHER",
-      "yahooSymbol": "341170.KS",
-      "chosung": "ㅍㅊㅁㄷㅅ"
-    },
-    {
       "code": "342870",
       "name": "오아",
       "market": "OTHER",
@@ -18316,25 +18302,11 @@
       "chosung": "ㅇㅇㅂㅈㅇㅅ"
     },
     {
-      "code": "469900",
-      "name": "하나31호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "469900.KS",
-      "chosung": "ㅎㄴㅎㅅㅍ"
-    },
-    {
       "code": "471820",
       "name": "셀로맥스사이언스",
       "market": "OTHER",
       "yahooSymbol": "471820.KS",
       "chosung": "ㅅㄹㅁㅅㅅㅇㅇㅅ"
-    },
-    {
-      "code": "472230",
-      "name": "SK증권제11호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "472230.KS",
-      "chosung": "ㅈㄱㅈㅎㅅㅍ"
     },
     {
       "code": "472850",
@@ -18349,13 +18321,6 @@
       "market": "OTHER",
       "yahooSymbol": "473000.KS",
       "chosung": "ㅈㄱㅈㅎㅅㅍ"
-    },
-    {
-      "code": "473050",
-      "name": "유안타제15호스팩",
-      "market": "OTHER",
-      "yahooSymbol": "473050.KS",
-      "chosung": "ㅇㅇㅌㅈㅎㅅㅍ"
     },
     {
       "code": "473950",
