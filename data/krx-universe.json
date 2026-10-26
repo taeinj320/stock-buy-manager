@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-19T08:12:19.380Z",
+  "updatedAt": "2026-10-26T08:13:13.024Z",
   "source": "data.go.kr",
-  "count": 2714,
+  "count": 2715,
   "items": [
     {
       "code": "900110",
@@ -2272,6 +2272,13 @@
       "chosung": "ㅎㅇㅎㅎ"
     },
     {
+      "code": "000770",
+      "name": "모비콘텐츠테크",
+      "market": "OTHER",
+      "yahooSymbol": "000770.KS",
+      "chosung": "ㅁㅂㅋㅌㅊㅌㅋ"
+    },
+    {
       "code": "007810",
       "name": "코리아써키트",
       "market": "KOSPI",
@@ -3483,6 +3490,13 @@
       "chosung": "ㅌㄱㅅㅇ"
     },
     {
+      "code": "001580",
+      "name": "엘리스",
+      "market": "OTHER",
+      "yahooSymbol": "001580.KS",
+      "chosung": "ㅇㄹㅅ"
+    },
+    {
       "code": "016090",
       "name": "대현",
       "market": "KOSPI",
@@ -4559,13 +4573,6 @@
       "market": "KOSPI",
       "yahooSymbol": "028050.KS",
       "chosung": "ㅅㅅ"
-    },
-    {
-      "code": "028080",
-      "name": "휴맥스홀딩스",
-      "market": "OTHER",
-      "yahooSymbol": "028080.KS",
-      "chosung": "ㅎㅁㅅㅎㄷㅅ"
     },
     {
       "code": "028100",
@@ -18023,10 +18030,10 @@
     },
     {
       "code": "457600",
-      "name": "벡트",
+      "name": "벡트로보틱스",
       "market": "OTHER",
       "yahooSymbol": "457600.KS",
-      "chosung": "ㅂㅌ"
+      "chosung": "ㅂㅌㄹㅂㅌㅅ"
     },
     {
       "code": "458350",
